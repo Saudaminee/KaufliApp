@@ -1,0 +1,13 @@
+current directory: /Users/sudamineepandey/ReactNativeAPPS/DEMOS/KaufliApp/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20231130-3366-3tbjlh.rb extconf.rb
+creating Makefile
+
+current directory: /Users/sudamineepandey/ReactNativeAPPS/DEMOS/KaufliApp/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/sudamineepandey/ReactNativeAPPS/DEMOS/KaufliApp/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/sudamineepandey/ReactNativeAPPS/DEMOS/KaufliApp/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" install

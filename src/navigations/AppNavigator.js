@@ -7,7 +7,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../components/Auth/Login';
 import Register from '../components/Auth/Register';
 import SplashScreen from '../screens/SplashScreen';
-
+import HomeScreen from "../screens/HomeScreen";
+import CartScreen from "../screens/CartScreen";
+import FavoriteScreen from "../screens/FavoriteScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -37,7 +40,26 @@ const AppNavigator = () => {
         component={Register}
         options={{ headerShown: false }} />
    
-
+   <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CartScreen"
+          component={CartScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="FavoriteScreen"
+          component={FavoriteScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
 
     </Stack.Navigator>
   </NavigationContainer>

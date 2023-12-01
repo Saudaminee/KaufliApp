@@ -29,7 +29,7 @@ const Login = ({ navigation }) => {
     const userData = { email, password };
     dispatch(login(userData));
     // Add logic to navigate to the home screen upon successful login
-    navigation.navigate("Home")
+    navigation.navigate("HomeScreen")
   };
 
   return (

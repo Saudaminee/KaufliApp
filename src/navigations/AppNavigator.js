@@ -1,6 +1,7 @@
 // AppNavigator.js
 import React from 'react';
 import { colors } from '../utils/styles/colors';
+import staticContents from '../utils/staticContents';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../components/Auth/Login';
@@ -14,7 +15,7 @@ const AppNavigator = () => {
     <NavigationContainer>
     <Stack.Navigator
       screenOptions={{
-        title: staticContent.app_name_txt,
+        title: staticContents.app_name_txt,
         headerStyle: {
           backgroundColor: colors.BASE_TEXT_COLOR,
         },

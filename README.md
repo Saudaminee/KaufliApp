@@ -1,0 +1,2 @@
+# KaufliApp
+E-commerce application

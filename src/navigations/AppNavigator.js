@@ -1,18 +1,15 @@
 // AppNavigator.js
-import React from "react";
-import { colors } from "../utils/styles/colors";
-import staticContents from "../utils/staticContents";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import Login from "../components/Auth/Login";
-import Register from "../components/Auth/Register";
-import SplashScreen from "../screens/SplashScreen";
-import HomeScreen from "../screens/HomeScreen";
-import CartScreen from "../screens/CartScreen";
-import FavoriteScreen from "../screens/FavoriteScreen";
+import React from 'react';
+import { colors } from '../utils/styles/colors';
+import staticContents from '../utils/staticContents';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from '../components/Auth/Login';
+import Register from '../components/Auth/Register';
+import SplashScreen from '../screens/SplashScreen';
 import ProfileScreen from "../screens/ProfileScreen";
-import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
-import DetailedScreen from "../screens/DetailedScreen";
+import Notifications from '../screens/Notifications';
+import BottomTabsManager from '../navigations/BottomTabsManager';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -28,37 +25,29 @@ const AppNavigator = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-        }}
-      >
+        }}>
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
-          options={{ headerShown: false }}
-        />
+          options={{ headerShown: false }} />
         <Stack.Screen
-          name="Login"
+          name='Login'
           component={Login}
-          options={{ headerShown: false }}
-        />
+          options={{ headerShown: false }} />
         <Stack.Screen
-          name="Register"
+          name='Register'
           component={Register}
-          options={{ headerShown: false }}
-        />
+          options={{ headerShown: false }} />
 
         <Stack.Screen
           name="HomeScreen"
-          component={HomeScreen}
+          component={BottomTabsManager}
           options={{ headerShown: false }}
         />
+      
         <Stack.Screen
-          name="CartScreen"
-          component={CartScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="FavoriteScreen"
-          component={FavoriteScreen}
+          name="Notifications"
+          component={Notifications}
           options={{ headerShown: false }}
         />
         <Stack.Screen

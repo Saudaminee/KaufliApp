@@ -1,14 +1,18 @@
-import { StyleSheet, Dimensions } from "react-native";
-import { colors } from "../styles/colors";
+import {
+  StyleSheet,
+  Dimensions,
+  StatusBar
+} from 'react-native';
+import { colors } from '../styles/colors';
 // Detect screen width and height
 const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   containerApp: {
     flex: 1,
-    justifyContent: "center",
-    backgroundColor: colors.WHITE,
-    flexDirection: "column",
+    justifyContent: 'center',
+    backgroundColor: colors.GRAYS_WHITE,
+    flexDirection: 'column'
   },
   headerContainer: {
     flex: 0.1,
@@ -18,18 +22,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: "row",
     elevation: 0.3,
-    alignItems: "center",
-    position: "absolute",
-    backgroundColor: colors.BASE_TEXT_COLOR,
-    // backgroundColor:colors.HEADER_COLOR
+    alignItems: 'center',
+    position: 'absolute',
+    backgroundColor: colors.BASE_TEXT_COLOR
   },
   header_txtStyle: {
-    color: "white",
-    // color: colors.BASE_TEXT_COLOR,
-    textAlign: "center",
-    alignSelf: "center",
-    marginLeft: "2%",
-    fontSize: 18,
+    color: 'white',
+    textAlign: 'center',
+    alignSelf: 'center',
+    marginLeft: '2%',
+    fontSize: 18
   },
   headerLogo: {
     width: 43,
@@ -283,6 +285,63 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F1F2",
     flex: 2,
   },
+  inputBox:{
+    borderColor: 'black', backgroundColor: 'red', borderWidth: 1,borderRadius:23, overflow: 'hidden'
+  },
+  content: {
+    flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    flexDirection:'column',
+    backgroundColor:colors.WHITE,
+    marginTop:5,
+    padding:10,
+    borderTopLeftRadius:15,
+    borderTopRightRadius:15
+    // Add your additional styles for the main content
+  },
+  headerContainerDashboard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'red',
+    marginTop:StatusBar.currentHeight,
+    paddingTop:24,
+    paddingBottom:20
+  },
+  seeAll:{
+      width:20,
+      height:20,
+      backgroundColor:colors.GRAYS_WHITE,
+      borderColor:colors.GRAYS_WHITE,
+      borderWidth:1,
+      borderRadius:40,
+      marginRight: 16,
+      justifyContent:'center',
+      alignItems:'center'
+  },
+  seeAllicon: {
+    width: 18,
+    height: 18
+    
+  },
+  categoryStyle:{
+    width:60,
+    height:60,
+    backgroundColor:colors.GRAYS_WHITE,
+    borderColor:colors.GRAYS_WHITE,
+    borderWidth:1,
+    borderRadius:50,
+    marginRight: 16,
+    justifyContent:'center',
+    alignItems:'center'
+},
+containerCategory: {
+  marginVertical:10
+  // alignItems: 'center',
+  // justifyContent: 'center',
+  // margin: 10,
+},
+ 
 });
 
 export default styles;

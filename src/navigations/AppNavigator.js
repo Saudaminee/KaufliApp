@@ -1,15 +1,17 @@
 // AppNavigator.js
-import React from 'react';
-import { colors } from '../utils/styles/colors';
-import staticContents from '../utils/staticContents';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../components/Auth/Login';
-import Register from '../components/Auth/Register';
-import SplashScreen from '../screens/SplashScreen';
+import React from "react";
+import { colors } from "../utils/styles/colors";
+import staticContents from "../utils/staticContents";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import SplashScreen from "../screens/SplashScreen";
+import Login from "../components/Auth/Login";
+import Register from "../components/Auth/Register";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import DetailedScreen from "../screens/DetailedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import Notifications from '../screens/Notifications';
-import BottomTabsManager from '../navigations/BottomTabsManager';
+import Notifications from "../screens/Notifications";
+import BottomTabsManager from "../navigations/BottomTabsManager";
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -25,26 +27,30 @@ const AppNavigator = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-        }}>
+        }}
+      >
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
-          options={{ headerShown: false }} />
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
-          name='Login'
+          name="Login"
           component={Login}
-          options={{ headerShown: false }} />
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
-          name='Register'
+          name="Register"
           component={Register}
-          options={{ headerShown: false }} />
+          options={{ headerShown: false }}
+        />
 
         <Stack.Screen
           name="HomeScreen"
           component={BottomTabsManager}
           options={{ headerShown: false }}
         />
-      
+
         <Stack.Screen
           name="Notifications"
           component={Notifications}

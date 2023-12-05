@@ -6,6 +6,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { colors } from "../../utils/styles/colors";
 
 const CustomButton = ({ title, onClick }) => {
   return (
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
     marginBottom: 20,
-    backgroundColor: "#C3E704",
+    backgroundColor: colors.BLACK,
     borderRadius: 10,
   },
 });

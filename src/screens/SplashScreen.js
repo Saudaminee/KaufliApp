@@ -1,6 +1,7 @@
 import {Text, View,StatusBar,Image } from 'react-native'
 import React,{useEffect} from 'react'
 import { IMAGES, getImageFromURL } from "../resources/images"
+import { colors } from '../utils/styles/colors'
 import styles from '../utils/styles/styles'
 
 const SplashScreen = ({navigation}) => {
@@ -11,13 +12,13 @@ const SplashScreen = ({navigation}) => {
         setTimeout(() => {
             navigation.reset({
               index: 0,
-              routes: [{ name: "HomeScreen" }],
+              routes: [{ name: "Login" }],
             });
         }, 2000);
       };
 
   return (
-    <View style={styles.containerApp}>
+    <View style={[styles.containerApp,{backgroundColor:colors.WHITE}]}>
     <StatusBar barStyle={"light-content"} />
     <View style={{ alignItems: 'center' }}>
 

@@ -12,13 +12,15 @@ import CustomTextInput from "../commons/CustomTextInput";
 import CustomButton from "../commons/CustomButton";
 import staticContents from "../../utils/staticContents";
 import styles from "../../utils/styles/styles";
+import { colors } from "../../utils/styles/colors";
+
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [hidepassword, setHidePassword] = useState(true);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container,{backgroundColor:colors.WHITE}]}>
       <Image
         source={require("../../assets/logo.png")}
         style={styles.logo_style}
@@ -84,7 +86,7 @@ const Login = ({ navigation }) => {
             </Text>
             <TouchableOpacity onPress={() => navigation.navigate("Register")}>
               <Text
-                style={[styles.BottomTxt, { color: "#C3E704", fontSize: 14 }]}
+                style={[styles.BottomTxt, { color: colors.DARK_BLACK, fontSize: 14 }]}
               >
                 {" "}
                 {staticContents.create_new_text}

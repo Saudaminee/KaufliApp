@@ -341,6 +341,18 @@ containerCategory: {
   // justifyContent: 'center',
   // margin: 10,
 },
+brandContainer: {
+  width:60,
+  height:60,
+  // padding: 10,
+  borderRadius:50,
+  borderRadius: 8,
+  marginRight: 16,
+  marginLeft:10,
+  marginVertical:15,
+  justifyContent:'center',
+  alignItems:'center'
+},
  
 });
 

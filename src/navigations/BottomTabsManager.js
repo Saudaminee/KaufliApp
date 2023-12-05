@@ -63,7 +63,7 @@ const BottomTabsManager = () => {
                   tintColor: colors.BASE_TEXT_COLOR,
                 }}
               /> */}
-              <Text style={focused ? { color: colors.BASE_TEXT_COLOR, fontSize: 14 } : { color: colors.BASE_TEXT_COLOR, fontSize: 11 }}>Search</Text>
+              <Text style={focused ? { color: colors.BASE_TEXT_COLOR, fontSize: 14 } : { color: colors.BASE_TEXT_COLOR, fontSize: 11 }}>Home</Text>
             </View>
           ),
         }}

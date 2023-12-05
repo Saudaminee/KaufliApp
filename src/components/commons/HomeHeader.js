@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Image, StyleSheet,Text } from 'react-native';
-import { colors } from './styles/colors';
-import { IMAGES, getImageFromURL } from "../resources/images"
+import { colors } from '../../utils/styles/colors';
+import { IMAGES, getImageFromURL } from "../../resources/images"
 import React from 'react'
 
 

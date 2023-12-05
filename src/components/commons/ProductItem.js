@@ -1,7 +1,7 @@
 import { View, Image, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react'
-import { IMAGES, getImageFromURL } from "../resources/images"
-import { colors } from './styles/colors';
+import { IMAGES, getImageFromURL } from "../../resources/images"
+import { colors } from '../../utils/styles/colors';
 
 const ProductItem = ({ image, price, shortDetail, offer }) => {
     const [isLiked, setIsLiked] = useState(false);

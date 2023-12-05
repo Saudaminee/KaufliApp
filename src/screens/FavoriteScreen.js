@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import Header from '../utils/Header'
+import Header from '../components/commons/Header'
 import React from 'react'
 
 const FavoriteScreen = () => {

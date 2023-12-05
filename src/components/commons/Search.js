@@ -1,7 +1,7 @@
 import { View, TextInput, TouchableOpacity, StyleSheet,Text ,Image} from 'react-native'
 import React, { useState } from 'react'
-import { IMAGES, getImageFromURL } from "../resources/images"
-import { colors } from './styles/colors';
+import { IMAGES, getImageFromURL } from "../../resources/images"
+import { colors } from '../../utils/styles/colors';
 
 const Search = ({ onSearch }) => {
     const [searchText, setSearchText] = useState('');

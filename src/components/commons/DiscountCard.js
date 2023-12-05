@@ -1,7 +1,7 @@
 // DiscountCard.js
 import React from 'react';
 import { View, Text, StyleSheet,Image } from 'react-native';
-import { IMAGES, getImageFromURL } from "../resources/images"
+import { IMAGES, getImageFromURL } from "../../resources/images"
 
 const DiscountCard = () => {
     return (

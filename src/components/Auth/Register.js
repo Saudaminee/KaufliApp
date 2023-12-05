@@ -14,6 +14,8 @@ import styles from "../../utils/styles/styles";
 import CustomButton from "../commons/CustomButton";
 import CustomTextInput from "../commons/CustomTextInput";
 import staticContents from "../../utils/staticContents";
+import { colors } from "../../utils/styles/colors";
+
 const Register = ({ navigation }) => {
   const [username, setUserName] = useState("");
   const [useremail, setUserEmail] = useState("");
@@ -139,7 +141,7 @@ const Register = ({ navigation }) => {
             </Text>
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>
               <Text
-                style={[styles.BottomTxt, { color: "#C3E704", fontSize: 14 }]}
+                style={[styles.BottomTxt, { color: colors.DARK_BLACK, fontSize: 14 }]}
               >
                 {staticContents.sign_in_text}
               </Text>

@@ -69,7 +69,7 @@ const Login = ({ navigation }) => {
             <CustomButton
               title={"Sign In"}
               onClick={() => {
-                navigation.navigate("DetailedScreen");
+                navigation.navigate("HomeScreen");
               }}
             />
           </View>

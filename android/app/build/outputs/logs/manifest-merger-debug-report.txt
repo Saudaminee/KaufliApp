@@ -14,6 +14,7 @@ MERGED from [:react-native-gesture-handler] /Users/nehasingh/KaufliApp/node_modu
 MERGED from [:react-native-reanimated] /Users/nehasingh/KaufliApp/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-safe-area-context] /Users/nehasingh/KaufliApp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-screens] /Users/nehasingh/KaufliApp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-vector-icons] /Users/nehasingh/KaufliApp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:react-android:0.72.7] /Users/nehasingh/.gradle/caches/transforms-3/f5b6369cea5fc99dae80dd8391bca788/transformed/jetified-react-android-0.72.7-debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:hermes-android:0.72.7] /Users/nehasingh/.gradle/caches/transforms-3/fa7dc7ca1c3bf05f8e6dbabdb3bb74dc/transformed/jetified-hermes-android-0.72.7-debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] /Users/nehasingh/.gradle/caches/transforms-3/463b085172aadec89519c358dac4e9e6/transformed/jetified-imagepipeline-okhttp3-2.5.0/AndroidManifest.xml:2:1-9:12
@@ -197,6 +198,8 @@ MERGED from [:react-native-safe-area-context] /Users/nehasingh/KaufliApp/node_mo
 MERGED from [:react-native-safe-area-context] /Users/nehasingh/KaufliApp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /Users/nehasingh/KaufliApp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /Users/nehasingh/KaufliApp/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /Users/nehasingh/KaufliApp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /Users/nehasingh/KaufliApp/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.7] /Users/nehasingh/.gradle/caches/transforms-3/f5b6369cea5fc99dae80dd8391bca788/transformed/jetified-react-android-0.72.7-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.7] /Users/nehasingh/.gradle/caches/transforms-3/f5b6369cea5fc99dae80dd8391bca788/transformed/jetified-react-android-0.72.7-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.7] /Users/nehasingh/.gradle/caches/transforms-3/fa7dc7ca1c3bf05f8e6dbabdb3bb74dc/transformed/jetified-hermes-android-0.72.7-debug/AndroidManifest.xml:5:5-44

@@ -4,6 +4,7 @@ export const colors = {
     ICON_COLOR:"#60ade0",
     PLACE_HOLDER_INPUT:"#8b9cb5",
     GREENISH_BEIGEGRADIENT: "#d6d266",
+    GREEN_LIGHT:'#B0FCB8',
     MARIGOLDGRADIENT: "#ffcb05",
     SALMONGRADIENT: "#ed8080",
     OFF_WHITE: "#fffdf6",
@@ -32,11 +33,12 @@ export const colors = {
     BLUE: "#29668b",
     MARIGOLD: "#ffcc00",
     WARM_GREY: "#7e7e7e",
-    GRAYS_WHITE: "#ffffff",
+    GRAYS_WHITE: "#EEF1F3",
     WHITE: "#ffffff",
     CALCITE: "#ffffff",
     ALMOST_BLACK: "#091d1d",
     WARM_GREY_TWO: "#999999",
     TANGERINE: "#ff8800",
-    DARK_RED:'#8B0000'
+    DARK_RED:'#8B0000',
+    GRAY:'#A0A0A0'
   };

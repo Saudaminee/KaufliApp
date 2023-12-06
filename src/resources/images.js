@@ -8,7 +8,15 @@ export const IMAGES = {
   CLOTH_DUMMY: "CLOTH_DUMMY",
   SHOO: "SHOO",
   LIKE: "LIKE",
-  UNLIKE: "UNLIKE"
+  UNLIKE: "UNLIKE",
+  KAULI_ICON: "KAULI_ICON",
+  K_ICON: "K_ICON",
+  SEARCH_SELECTED: "SEARCH_SELECTED",
+  CART_ICON: "CART_ICON",
+  CARTFILL_ICON: "CARTFILL_ICON",
+  ACCOUNT_ICON: "ACCOUNT_ICON",
+  ACCOUNT_FILL_ICON: "ACCOUNT_FILL_ICON",
+  REMOVE:"REMOVE"
 
 };
 const getImage = (name) => {
@@ -34,6 +42,10 @@ const getImage = (name) => {
       iconName = require("../assets/search.png")
       break;
 
+    case IMAGES.SEARCH_SELECTED:
+      iconName = require("../assets/searchfill.png")
+      break;
+
     case IMAGES.DISCOUNT_ICON:
       iconName = require("../assets/discount.png")
       break;
@@ -57,6 +69,36 @@ const getImage = (name) => {
     case IMAGES.UNLIKE:
       iconName = require("../assets/heartuncheck.png")
       break;
+
+    case IMAGES.KAULI_ICON:
+      iconName = require("../assets/kaufli.png")
+      break;
+
+    case IMAGES.K_ICON:
+      iconName = require("../assets/k.png")
+      break;
+
+    case IMAGES.CART_ICON:
+      iconName = require("../assets/cartbag.png")
+      break;
+
+    case IMAGES.CARTFILL_ICON:
+      iconName = require("../assets/cartbagfill.png")
+      break;
+
+    case IMAGES.ACCOUNT_ICON:
+      iconName = require("../assets/account.png")
+      break;
+
+    case IMAGES.ACCOUNT_FILL_ICON:
+      iconName = require("../assets/accountfill.png")
+      break;
+
+    case IMAGES.REMOVE:
+      iconName = require("../assets/remove.png")
+      break;
+
+
 
   }
   return iconName;

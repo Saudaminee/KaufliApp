@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import {
   View,
@@ -19,36 +17,16 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DetailedScreen = ({ route, navigation }) => {
-  const { productID } = route.params;
+  const DATA = route.params.data;
+  console.log(DATA, "DATA");
 
-  const [product, setProduct] = useState({});
+  //   const [product, setProduct] = useState({});
 
   const width = Dimensions.get("window").width;
 
   const scrollX = new Animated.Value(0);
 
   let position = Animated.divide(scrollX, width);
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
-      getDataFromDB();
-    });
-
-    return unsubscribe;
-  }, [navigation]);
-
-  //   get product data by productID
-
-  const getDataFromDB = async () => {
-    for (let index = 0; index < Items.length; index++) {
-      if (Items[index].id == productID) {
-        await setProduct(Items[index]);
-        return;
-      }
-    }
-  };
-
-  //add to cart
 
   const addToCart = async (id) => {
     let itemArray = await AsyncStorage.getItem("cartItems");
@@ -85,6 +63,7 @@ const DetailedScreen = ({ route, navigation }) => {
 
   //product horizontal scroll product card
   const renderProduct = ({ item, index }) => {
+    console.log("item, index", item, index);
     return (
       <View
         style={{
@@ -157,8 +136,8 @@ const DetailedScreen = ({ route, navigation }) => {
               />
             </TouchableOpacity>
           </View>
-          <FlatList
-            data={product.productImageList ? product.productImageList : null}
+          {/* <FlatList
+            data={DATA.image ? DATA.image : null}
             horizontal
             renderItem={renderProduct}
             showsHorizontalScrollIndicator={false}
@@ -169,8 +148,8 @@ const DetailedScreen = ({ route, navigation }) => {
               [{ nativeEvent: { contentOffset: { x: scrollX } } }],
               { useNativeDriver: false }
             )}
-          />
-          <View
+          /> */}
+          {/* <View
             style={{
               width: "100%",
               flexDirection: "row",
@@ -180,8 +159,8 @@ const DetailedScreen = ({ route, navigation }) => {
               marginTop: 32,
             }}
           >
-            {product.productImageList
-              ? product.productImageList.map((data, index) => {
+            {DATA.image
+              ? DATA.image.map((data, index) => {
                   let opacity = position.interpolate({
                     inputRange: [index - 1, index, index + 1],
                     outputRange: [0.2, 1, 0.2],
@@ -202,7 +181,25 @@ const DetailedScreen = ({ route, navigation }) => {
                   );
                 })
               : null}
+          </View> */}
+          <View
+            style={{
+              width: width,
+              height: 240,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              source={DATA.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                resizeMode: "contain",
+              }}
+            />
           </View>
+          {/* <Image source={DATA.image} /> */}
         </View>
         {/* Product In formation VIew */}
         <View
@@ -255,7 +252,7 @@ const DetailedScreen = ({ route, navigation }) => {
                 maxWidth: "84%",
               }}
             >
-              {product.productName}
+              {DATA.name}
             </Text>
             <Ionicons
               name="link-outline"
@@ -282,13 +279,12 @@ const DetailedScreen = ({ route, navigation }) => {
               marginBottom: 18,
             }}
           >
-            {product.description}
+            {DATA.shortDetail}
           </Text>
           <View
             style={{
               flexDirection: "row",
               marginVertical: 4,
-              //  alignItems: "center",
               justifyContent: "space-between",
             }}
           >
@@ -307,7 +303,10 @@ const DetailedScreen = ({ route, navigation }) => {
                 source={require("../assets/heart.png")}
                 style={{ height: 20, width: 20 }}
               />
-              <Text style={{ textTransform: "uppercase",color:'#000' }}> wishlist</Text>
+              <Text style={{ textTransform: "uppercase", color: "#000" }}>
+                {" "}
+                wishlist
+              </Text>
             </View>
 
             <View
@@ -382,11 +381,11 @@ const DetailedScreen = ({ route, navigation }) => {
                 marginBottom: 4,
               }}
             >
-              &#8377; {product.productPrice}.00
+              &#8377; {DATA.price}.00
             </Text>
             <Text>
-              Tax Rate 2%~ &#8377;{product.productPrice / 20} (&#8377;
-              {product.productPrice + product.productPrice / 20})
+              Tax Rate 2%~ &#8377;{DATA.price / 20} (&#8377;
+              {DATA.price + DATA.price / 20})
             </Text>
           </View>
         </View>

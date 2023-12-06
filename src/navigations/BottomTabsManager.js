@@ -5,6 +5,7 @@ import { colors } from '../utils/styles/colors';
 import HomeScreen from '../screens/HomeScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import CartScreen from '../screens/CartScreen';
+import DetailedScreen from '../screens/DetailedScreen';
 // import RequestsScreen from '../screens/RequestsScreen';
 // import BlockedList from '../screens/BlockedList';
 
@@ -148,7 +149,8 @@ const BottomTabsManager = () => {
       />
       <Tab.Screen
         name="My Account"
-        component={HomeScreen}
+        // component={HomeScreen}
+        component={DetailedScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>

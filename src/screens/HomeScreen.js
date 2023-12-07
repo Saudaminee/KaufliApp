@@ -52,11 +52,6 @@ const HomeScreen = ({ navigation }) => {
     {
       id: 2,
       image: getImageFromURL(IMAGES.SHOO),
-      // image: [
-      //   require("../components/database/images/products/Mi1.png"),
-      //   require("../components/database/images/products/Mi1.png"),
-      //   require("../components/database/images/products/Mi1.png"),
-      // ],
       name: "4WRD by Dressberry",
       price: 500,
       shortDetail: "Short detail 2",

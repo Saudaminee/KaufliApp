@@ -72,14 +72,12 @@ const getImage = (name) => {
       iconName = require("../assets/heartuncheck.png");
       break;
 
-<<<<<<< HEAD
     case IMAGES.CARTBAG:
       iconName = require("../assets/bag.png");
       break;
     case IMAGES.RATESTAR:
       iconName = require("../assets/star.png");
       break;
-=======
     case IMAGES.KAULI_ICON:
       iconName = require("../assets/kaufli.png")
       break;
@@ -110,7 +108,6 @@ const getImage = (name) => {
 
 
 
->>>>>>> origin/development
   }
   return iconName;
 };

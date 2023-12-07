@@ -7,7 +7,7 @@ export const colors = {
     GREEN_LIGHT:'#B0FCB8',
     MARIGOLDGRADIENT: "#ffcb05",
     SALMONGRADIENT: "#ed8080",
-    OFF_WHITE: "#fffdf6",
+    OFF_WHITE: "#E5E9E5",
     BLACK: "#333333",
     PRIMARY_PRIMARY: "#e27415",
     DARK: "rgba(21, 30, 40, 0.3)",

@@ -12,6 +12,7 @@ import DetailedScreen from "../screens/DetailedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import Notifications from "../screens/Notifications";
 import BottomTabsManager from "../navigations/BottomTabsManager";
+import OrderHistory from "../screens/OrderHistory";
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -71,6 +72,12 @@ const AppNavigator = () => {
           component={DetailedScreen}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="OrderHistory"
+          component={OrderHistory}
+          options={{ headerShown: false }}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

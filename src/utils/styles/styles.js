@@ -393,6 +393,48 @@ remove: {
   borderRadius: 40,
   justifyContent: "center",
   alignItems: "center",
+},
+profileText:{
+  fontSize:11,
+  color:colors.BASE_TEXT_COLOR,
+  fontWeight:'400',
+},
+commonTouchProfile:{
+  flexDirection:'row',
+  justifyContent:'space-between',
+  padding:10,
+  alignItems:'center',
+  marginHorizontal:10,
+},
+lineView:{width:'100%',
+height:0.5,
+backgroundColor:colors.GRAYS_WHITE},
+
+iconStyle:{
+  height:24,width:24,resizeMode:'contain'
+},
+filerStyle: {
+    flexDirection: 'row',
+    padding: 4,
+    backgroundColor: colors.WHITE,
+    borderRadius: 5
+},
+filterText: {
+    fontSize: 12,
+    color: colors.BLACK,
+    fontWeight: '700'
+},
+textStyle: {
+    fontSize: 11,
+    paddingHorizontal: 5,
+    color: colors.BLACK
+},
+filterIconStyle: {
+    height: 12,
+    width: 16,
+    alignSelf: 'center',
+    paddingHorizontal: 2,
+    resizeMode: 'contain'
 }
  
 });

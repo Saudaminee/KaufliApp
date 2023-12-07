@@ -1,5 +1,6 @@
 export const IMAGES = {
   LOGO: "LOGO",
+  LOGOUT: "LOGOUT",
   PROFILE_ICON: "PROFILE_ICON",
   NOTIFICATION_ICON: "NOTIFICATION_ICON",
   SEARCH_ICON: "SEARCH_ICON",
@@ -18,7 +19,8 @@ export const IMAGES = {
   CARTFILL_ICON: "CARTFILL_ICON",
   ACCOUNT_ICON: "ACCOUNT_ICON",
   ACCOUNT_FILL_ICON: "ACCOUNT_FILL_ICON",
-  REMOVE:"REMOVE"
+  REMOVE: "REMOVE",
+  FILTER_ICON:"FILTER_ICON"
 
 };
 const getImage = (name) => {
@@ -106,6 +108,13 @@ const getImage = (name) => {
       iconName = require("../assets/remove.png")
       break;
 
+    case IMAGES.LOGOUT:
+      iconName = require("../assets/logout.png")
+      break;
+
+      case IMAGES.FILTER_ICON:
+        iconName = require("../assets/sort.png")
+        break;
 
 
   }

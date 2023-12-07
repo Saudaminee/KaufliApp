@@ -42,35 +42,41 @@ const HomeScreen = ({ navigation }) => {
     {
       id: 1,
       image: getImageFromURL(IMAGES.CLOTH_DUMMY),
-      name: "MI Super Bass Bluetooth Wireless Headphones",
-      price: "$50",
-      shortDetail: "Short detail 1",
+      name: "4WRD by Dressberry",
+      price: 500,
+      shortDetail: "Men Blue-Coloured Solid Tailored Jacket",
       offer: "20% off",
+      discount: 20,
     },
     {
       id: 2,
       image: getImageFromURL(IMAGES.SHOO),
+      name: "4WRD by Dressberry",
+      price: 500,
       
       name: "MI Super Bass Bluetooth Wireless Headphones",
       price: "$30",
       shortDetail: "Short detail 2",
       offer: "10% off",
+      discount: 10,
     },
     {
       id: 3,
       image: getImageFromURL(IMAGES.CLOTH_DUMMY),
       name: "MI Super Bass Bluetooth Wireless Headphones",
-      price: "$50",
+      price: 500,
       shortDetail: "Short detail 1",
       offer: "20% off",
+      discount: 20,
     },
     {
       id: 4,
       image: getImageFromURL(IMAGES.SHOO),
       name: "MI Super Bass Bluetooth Wireless Headphones",
-      price: "$30",
+      price: 300,
       shortDetail: "Short detail 2",
       offer: "10% off",
+      discount: 10,
     },
     // Add more products as needed
   ];
@@ -243,6 +249,7 @@ const HomeScreen = ({ navigation }) => {
                 shortDetail={item.shortDetail}
                 offer={item.offer}
                 id={item.id}
+                discount={item.discount}
               />
             )}
           />

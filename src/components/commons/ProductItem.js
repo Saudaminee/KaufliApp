@@ -10,7 +10,15 @@ import React, { useState } from "react";
 import { IMAGES, getImageFromURL } from "../../resources/images";
 import { colors } from "../../utils/styles/colors";
 import { useNavigation } from "@react-navigation/native";
-const ProductItem = ({ image, price, shortDetail, offer, id, name }) => {
+const ProductItem = ({
+  image,
+  price,
+  shortDetail,
+  offer,
+  id,
+  name,
+  discount,
+}) => {
   const navigation = useNavigation();
   const [isLiked, setIsLiked] = useState(false);
   const handlePress = () => {
@@ -23,6 +31,7 @@ const ProductItem = ({ image, price, shortDetail, offer, id, name }) => {
     price: price,
     shortDetail: shortDetail,
     offer: offer,
+    discount: discount,
   };
   const goToDetailedScreen = () => {
     navigation.navigate("DetailedScreen", (data = { data }));

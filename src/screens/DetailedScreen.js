@@ -15,12 +15,25 @@ import { Items, COLOURS } from "../components/database/Database";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import { getImageFromURL, IMAGES } from "../resources/images";
+import CategoryItem from "../components/commons/CategoryItem";
+import { colors } from "../utils/styles/colors";
+import styles from "../utils/styles/styles";
+import { SIZE } from "../utils/constant";
 const DetailedScreen = ({ route, navigation }) => {
   const DATA = route.params.data;
   console.log(DATA, "DATA");
-
-  //   const [product, setProduct] = useState({});
+  const text =
+    "Purus torquent sagittis platea at ligula iaculis augue nibh dictum. Pellentesque hac mus nisi donec dis neque sodales eros. Platea tempor ultricies. Nostra porttitor nam penatibus integer sociis cras augue nullam inceptos augue vestibulum nam pharetra maecenas dictumst odio rutrum habitant montes sociis velit at interdum litora venenatis orci lacus et. Pellentesque varius interdum Dictumst ut etiam penatibus dictumst. Condimentum phasellus. Sociis nec vivamus nullam tristique netus duis taciti semper ornare pede turpis mattis morbi vestibulum mauris sodales tortor fringilla egestas, in erat.";
+  var maxLines = 1;
+  const [isLiked, setIsLiked] = useState(false);
+  const [showFullText, setShowFullText] = useState(false);
+  const handlePress = () => {
+    setIsLiked(!isLiked);
+  };
+  const toggleReadMore = () => {
+    setShowFullText(!showFullText);
+  };
 
   const width = Dimensions.get("window").width;
 
@@ -61,37 +74,14 @@ const DetailedScreen = ({ route, navigation }) => {
     }
   };
 
-  //product horizontal scroll product card
-  const renderProduct = ({ item, index }) => {
-    console.log("item, index", item, index);
-    return (
-      <View
-        style={{
-          width: width,
-          height: 240,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          source={item}
-          style={{
-            width: "100%",
-            height: "100%",
-            resizeMode: "contain",
-          }}
-        />
-      </View>
-    );
-  };
-
   return (
-    <View
+    <ScrollView
       style={{
         width: "100%",
         height: "100%",
         backgroundColor: COLOURS.white,
         position: "relative",
+        flex: 1,
       }}
     >
       {/* Status bar */}
@@ -100,7 +90,7 @@ const DetailedScreen = ({ route, navigation }) => {
         barStyle="dark-content"
       />
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {/* product image */}
         <View
           style={{
@@ -123,65 +113,24 @@ const DetailedScreen = ({ route, navigation }) => {
               paddingLeft: 16,
             }}
           >
-            <TouchableOpacity onPress={() => navigation.goBack("Home")}>
-              <Entypo
-                name="chevron-left"
-                style={{
-                  fontSize: 18,
-                  color: COLOURS.backgroundDark,
-                  padding: 12,
-                  backgroundColor: COLOURS.white,
-                  borderRadius: 10,
-                }}
+            <TouchableOpacity
+              ///  style={styles.backbtnView}
+              style={{
+                padding: 10,
+                backgroundColor: COLOURS.white,
+                borderRadius: 10,
+              }}
+              onPress={() => navigation.goBack()}
+            >
+              <Image
+                source={require("../assets/arrow.png")}
+                //  style={styles.backicon}
+                style={{ width: 15, height: 15 }}
+                resizeMode={"center"}
               />
             </TouchableOpacity>
           </View>
-          {/* <FlatList
-            data={DATA.image ? DATA.image : null}
-            horizontal
-            renderItem={renderProduct}
-            showsHorizontalScrollIndicator={false}
-            decelerationRate={0.8}
-            snapToInterval={width}
-            bounces={false}
-            onScroll={Animated.event(
-              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-              { useNativeDriver: false }
-            )}
-          /> */}
-          {/* <View
-            style={{
-              width: "100%",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              marginBottom: 16,
-              marginTop: 32,
-            }}
-          >
-            {DATA.image
-              ? DATA.image.map((data, index) => {
-                  let opacity = position.interpolate({
-                    inputRange: [index - 1, index, index + 1],
-                    outputRange: [0.2, 1, 0.2],
-                    extrapolate: "clamp",
-                  });
-                  return (
-                    <Animated.View
-                      key={index}
-                      style={{
-                        width: "16%",
-                        height: 2.4,
-                        backgroundColor: COLOURS.black,
-                        opacity,
-                        marginHorizontal: 4,
-                        borderRadius: 100,
-                      }}
-                    />
-                  );
-                })
-              : null}
-          </View> */}
+          {/* Image View */}
           <View
             style={{
               width: width,
@@ -208,43 +157,15 @@ const DetailedScreen = ({ route, navigation }) => {
             marginTop: 6,
           }}
         >
-          {/* <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginVertical: 14,
-              backgroundColor:'red'
-            }}
-          >
-            <Entypo
-              name="shopping-cart"
-              style={{
-                fontSize: 18,
-                color: COLOURS.blue,
-                marginRight: 6,
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 12,
-                color: COLOURS.black,
-              }}
-            >
-              Shopping
-            </Text>
-          </View> */}
-          {/* Product Name View */}
+          {/* Product Name and desciption View */}
           <View
             style={{
-              flexDirection: "row",
               marginVertical: 4,
-              alignItems: "center",
-              justifyContent: "space-between",
             }}
           >
             <Text
               style={{
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: "600",
                 letterSpacing: 0.5,
                 marginVertical: 4,
@@ -254,56 +175,121 @@ const DetailedScreen = ({ route, navigation }) => {
             >
               {DATA.name}
             </Text>
-            <Ionicons
-              name="link-outline"
+            {/* description text */}
+            <Text
               style={{
-                fontSize: 24,
-                color: COLOURS.blue,
-                backgroundColor: COLOURS.blue + 10,
-                padding: 8,
-                borderRadius: 100,
+                fontSize: 15,
+                color: COLOURS.black,
+                letterSpacing: 1,
+                opacity: 0.5,
+                maxWidth: "84%",
+                maxHeight: 44,
+                marginBottom: 4,
               }}
-            />
+            >
+              {DATA.shortDetail}
+            </Text>
           </View>
-          {/* description text */}
-          <Text
-            style={{
-              fontSize: 12,
-              color: COLOURS.black,
-              fontWeight: "400",
-              letterSpacing: 1,
-              opacity: 0.5,
-              lineHeight: 20,
-              maxWidth: "85%",
-              maxHeight: 44,
-              marginBottom: 18,
-            }}
-          >
-            {DATA.shortDetail}
-          </Text>
+          {/* long desc */}
+          <View style={{ maxWidth: "100%" }}>
+            <Text
+              numberOfLines={showFullText ? undefined : maxLines}
+              style={{ letterSpacing: 0.5 }}
+            >
+              {text}
+            </Text>
+            {text.length > maxLines * 20 && ( // Assuming 20 characters per line as an estimate
+              <TouchableOpacity onPress={toggleReadMore}>
+                <Text style={{ color: "#03A685" }}>
+                  {showFullText ? "Read less" : "Read more"}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+          {/* MRP view  */}
+          <View style={{ flexDirection: "row", marginTop: 10 }}>
+            <Text
+              style={{
+                fontSize: 15,
+                maxWidth: "85%",
+                color: colors.GRAY,
+                marginBottom: 4,
+              }}
+            >
+              MRP
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                maxWidth: "85%",
+                color: "#000",
+              }}
+            >
+              {" "}
+              &#8377; {DATA.price}.00
+            </Text>
+          </View>
+          {/* Product Size name and list View */}
+          <View style={{ marginTop: 8 }}>
+            <Text
+              style={{
+                fontSize: 17,
+                color: colors.DARK_BLACK,
+                fontWeight: "500",
+              }}
+            >
+              Select Size
+            </Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              {SIZE.map((size) => (
+                <CategoryItem key={size.id} title={size.title} />
+              ))}
+            </ScrollView>
+          </View>
+
+          {/* WishList Add toCart Button View */}
           <View
             style={{
               flexDirection: "row",
               marginVertical: 4,
               justifyContent: "space-between",
+              borderBottomColor: COLOURS.backgroundLight,
+              borderBottomWidth: 1,
+              paddingBottom: 20,
             }}
           >
             <View
               style={{
-                borderWidth: 1,
-                borderRadius: 5,
-                width: "40%",
+                borderWidth: 0.5,
+                borderRadius: 2,
+                width: "45%",
                 height: "100%",
                 flexDirection: "row",
-                padding: 5,
-                justifyContent: "space-around",
+                padding: 10,
+                justifyContent: "center",
+                borderColor: "#e3e3e3",
+                alignItems: "center",
               }}
             >
-              <Image
-                source={require("../assets/heart.png")}
-                style={{ height: 20, width: 20 }}
-              />
-              <Text style={{ textTransform: "uppercase", color: "#000" }}>
+              <TouchableOpacity onPress={handlePress}>
+                <Image
+                  source={
+                    isLiked
+                      ? getImageFromURL(IMAGES.LIKE)
+                      : getImageFromURL(IMAGES.UNLIKE)
+                  }
+                  style={{ height: 15, width: 15, resizeMode: "contain" }}
+                />
+              </TouchableOpacity>
+              <Text
+                style={{
+                  textTransform: "uppercase",
+                  color: "#000",
+                  fontWeight: "500",
+                  marginStart: 10,
+                  fontSize: 12,
+                }}
+              >
                 {" "}
                 wishlist
               </Text>
@@ -312,120 +298,144 @@ const DetailedScreen = ({ route, navigation }) => {
             <View
               style={{
                 borderWidth: 1,
-                borderRadius: 5,
-                width: "40%",
-                height: "80%",
-              }}
-            ></View>
-          </View>
-          {/* Address view */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginVertical: 14,
-              borderBottomColor: COLOURS.backgroundLight,
-              borderBottomWidth: 1,
-              paddingBottom: 20,
-            }}
-          >
-            <View
-              style={{
+                borderRadius: 2,
+                width: "45%",
+                height: "100%",
+                backgroundColor: colors.BLACK,
                 flexDirection: "row",
-                width: "80%",
+                justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <View
-                style={{
-                  color: COLOURS.blue,
-                  backgroundColor: COLOURS.backgroundLight,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 12,
-                  borderRadius: 100,
-                  marginRight: 10,
-                }}
-              >
-                <Entypo
-                  name="location-pin"
+              <TouchableOpacity>
+                <Image
+                  source={getImageFromURL(IMAGES.CARTBAG)}
                   style={{
-                    fontSize: 16,
-                    color: COLOURS.blue,
+                    height: 18,
+                    width: 18,
+                    resizeMode: "contain",
+                    tintColor: "#fff",
                   }}
                 />
-              </View>
-              <Text> Rustaveli Ave 57,{"\n"}17-001, Batume</Text>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  textTransform: "uppercase",
+                  color: "#fff",
+                  fontWeight: "500",
+                  marginStart: 10,
+                  fontSize: 12,
+                }}
+              >
+                {" "}
+                Add to cart
+              </Text>
             </View>
-            <Entypo
-              name="chevron-right"
-              style={{
-                fontSize: 22,
-                color: COLOURS.backgroundDark,
-              }}
-            />
           </View>
-          {/* MRP view  */}
-          <View
-            style={{
-              paddingHorizontal: 16,
-            }}
-          >
+
+          {/* Address view */}
+          <View>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 17,
+                color: colors.DARK_BLACK,
                 fontWeight: "500",
-                maxWidth: "85%",
-                color: COLOURS.black,
-                marginBottom: 4,
+                marginVertical: 4,
               }}
             >
-              &#8377; {DATA.price}.00
+              Delivery & Services for
             </Text>
-            <Text>
-              Tax Rate 2%~ &#8377;{DATA.price / 20} (&#8377;
-              {DATA.price + DATA.price / 20})
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                alignItems: "center",
+                borderColor: "#e3e3e3",
+                borderWidth: 0.5,
+                borderRadius: 2,
+                justifyContent: "space-between",
+                marginTop: 10,
+                padding: 10,
+              }}
+            >
+              <Text
+                style={{
+                  textTransform: "capitalize",
+                  color: "#000",
+                  fontWeight: "500",
+                  marginStart: 10,
+                  fontSize: 12,
+                }}
+              >
+                201204 (neha)
+              </Text>
+              <Text
+                style={{
+                  textTransform: "capitalize",
+                  color: colors.DARK_GREY,
+                  marginEnd: 10,
+                  fontSize: 12,
+                  fontWeight: "bold",
+                }}
+              >
+                Change
+              </Text>
+            </View>
+          </View>
+
+          {/* Review View */}
+          <View style={{ marginVertical: 4 }}>
+            <Text
+              style={{
+                fontSize: 17,
+                color: colors.DARK_BLACK,
+                fontWeight: "500",
+                textTransform: "capitalize",
+              }}
+            >
+              rating & review
+            </Text>
+            <Text
+              style={{
+                fontSize: 12,
+                color: "#03A685",
+                textTransform: "capitalize",
+                marginVertical: 4,
+              }}
+            >
+              By verified buyers only
+            </Text>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text style={{ fontSize: 24, color: "#000", marginVertical: 5 }}>
+                4.2
+              </Text>
+              <Image
+                source={getImageFromURL(IMAGES.RATESTAR)}
+                style={{
+                  height: 15,
+                  width: 15,
+                  resizeMode: "contain",
+                  left: 5,
+                  top: 5,
+                  tintColor: "#03A685",
+                }}
+              />
+            </View>
+
+            <Text
+              style={{
+                fontSize: 12,
+                color: "grey",
+                fontWeight: "500",
+                textTransform: "capitalize",
+              }}
+            >
+              17 Verified buyers
             </Text>
           </View>
         </View>
       </ScrollView>
-      {/* Add to cart button */}
-      {/* <View
-        style={{
-          position: "absolute",
-          bottom: 10,
-          height: "8%",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => (product.isAvailable ? addToCart(product.id) : null)}
-          style={{
-            width: "86%",
-            height: "80%",
-            backgroundColor: COLOURS.green,
-            borderRadius: 10,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "500",
-              letterSpacing: 1,
-              color: COLOURS.black,
-              textTransform: "uppercase",
-            }}
-          >
-            {product.isAvailable ? "Add to cart" : "Not Avialable"}
-          </Text>
-        </TouchableOpacity>
-      </View> */}
-    </View>
+    </ScrollView>
   );
 };
 

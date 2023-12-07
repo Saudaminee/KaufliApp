@@ -290,15 +290,12 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     flexDirection:'column',
     backgroundColor:colors.WHITE,
     marginTop:5,
     padding:10,
     borderTopLeftRadius:15,
     borderTopRightRadius:15
-    // Add your additional styles for the main content
   },
   headerContainerDashboard: {
     flexDirection: 'row',
@@ -353,6 +350,55 @@ brandContainer: {
   justifyContent:'center',
   alignItems:'center'
 },
+listContainer: {
+  flexDirection: 'column',
+},
+itemContainer: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 16,
+},
+itemImage: {
+  width: 80,
+  height: 80,
+  borderRadius: 8,
+  marginRight: 16,
+},
+itemName: {
+  fontSize: 18,
+  flex: 1,
+},
+removeButton: {
+  color: 'red',
+},
+image: {
+  width: "100%",
+  height: 150,
+  resizeMode: "cover", // or 'contain' based on your preference
+  borderRadius: 8,
+  marginBottom: 8,
+  // borderWidth:1,
+  overflow: "hidden",
+  position: "relative", // or 'absolute' based on your layout
+},
+wish_container: {
+  flex: 1,
+  margin: 10,
+  backgroundColor: colors.GRAYS_WHITE,
+  borderRadius: 8,
+  padding: 8,
+},
+remove: {
+  width: 28,
+  height: 28,
+  backgroundColor: colors.GRAYS_WHITE,
+  right: "5%",
+  marginTop: 5,
+  position: "absolute",
+  borderRadius: 40,
+  justifyContent: "center",
+  alignItems: "center",
+}
  
 });
 

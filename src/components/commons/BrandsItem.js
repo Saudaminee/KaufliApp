@@ -9,7 +9,7 @@ const BrandsItem = ({ title, backgroundColor }) => {
         <View style={[styles.brandContainer, { backgroundColor}]}>
           {/* <Image source={image} style={styles.categoryStyle} /> */}
           <TouchableOpacity style={styles.categoryStyle}>
-          <Text style={{textAlign:'center',fontSize:11,color:colors.BLACK}}>{title}</Text>
+          <Text style={{textAlign:'center',fontSize:12,color:colors.BLACK,fontWeight:'900'}}>{title}</Text>
           </TouchableOpacity>
          
         </View>

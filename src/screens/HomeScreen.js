@@ -54,6 +54,9 @@ const HomeScreen = ({ navigation }) => {
       image: getImageFromURL(IMAGES.SHOO),
       name: "4WRD by Dressberry",
       price: 500,
+      
+      name: "MI Super Bass Bluetooth Wireless Headphones",
+      price: "$30",
       shortDetail: "Short detail 2",
       offer: "10% off",
       discount: 10,
@@ -102,16 +105,13 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.content}>
         {/* Your app components */}
         <View>
-          <View
-            style={{ justifyContent: "space-between", flexDirection: "row" }}
-          >
+          <View  style={{ justifyContent: "space-between", flexDirection: "row" }}>
             <Text
               style={{
                 fontSize: 17,
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
-              }}
-            >
+              }}>
               {" "}
               Categories
             </Text>
@@ -138,7 +138,7 @@ const HomeScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           </View>
-          <ScrollView horizontal>
+          <ScrollView showsHorizontalScrollIndicator={false} horizontal>
             {categories.map((category) => (
               <CategoryItem key={category.id} title={category.title} />
             ))}
@@ -187,7 +187,7 @@ const HomeScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           </View>
-          <ScrollView horizontal>
+          <ScrollView showsHorizontalScrollIndicator={false} horizontal>
             {brands.map((brands) => (
               <BrandsItem
                 key={brands.id}

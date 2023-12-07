@@ -334,14 +334,10 @@ const styles = StyleSheet.create({
 },
 containerCategory: {
   marginVertical:10
-  // alignItems: 'center',
-  // justifyContent: 'center',
-  // margin: 10,
 },
 brandContainer: {
   width:60,
   height:60,
-  // padding: 10,
   borderRadius:50,
   borderRadius: 8,
   marginRight: 16,
@@ -377,7 +373,6 @@ image: {
   resizeMode: "cover", // or 'contain' based on your preference
   borderRadius: 8,
   marginBottom: 8,
-  // borderWidth:1,
   overflow: "hidden",
   position: "relative", // or 'absolute' based on your layout
 },

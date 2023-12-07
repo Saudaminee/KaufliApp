@@ -45,7 +45,7 @@ const FavoriteScreen = () => {
   </TouchableOpacity>
   );
   return (
-    <SafeAreaView>
+    <SafeAreaView >
       <Header title="My Wishlists" items={wishlistItems.length+" items"} />
       <View style={{ marginTop: '3%', backgroundColor: colors.WHITE, borderTopLeftRadius: 15, borderTopRightRadius: 15, padding: '2%' }} >
          <FlatList

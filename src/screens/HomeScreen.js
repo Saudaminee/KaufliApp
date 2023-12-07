@@ -25,10 +25,9 @@ const HomeScreen = ({ navigation }) => {
     { id: 2, title: "Women" },
     { id: 3, title: "Unisex" },
     { id: 4, title: "New Arrivals" },
-    { id: 5, title: "Brand" },
-    { id: 6, title: "Bags" },
-    { id: 7, title: "Shoes" },
-    { id: 8, title: "Beauty products" },
+    { id: 5, title: "Bags" },
+    { id: 6, title: "Shoes" },
+    { id: 7, title: "Beauty products" },
   ];
 
   const brands = [
@@ -209,7 +208,7 @@ const HomeScreen = ({ navigation }) => {
               {" "}
               Flash sale
             </Text>
-            <TouchableOpacity
+            <TouchableOpacity 
               style={{ padding: 5, flexDirection: "row" }}
               onPress={() => navigation.navigate("Notifications")}
             >

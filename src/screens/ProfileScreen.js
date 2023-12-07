@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import { View, Text, FlatList, Image,TouchableOpacity, SafeAreaView ,ImageBackground,StatusBar} from 'react-native';
+import styles from '../utils/styles/styles'
+import { IMAGES, getImageFromURL } from "../resources/images";
+import { colors } from '../utils/styles/colors';
+import ProfileHeader from '../components/commons/ProfileHeader';
 
 const ProfileScreen = () => {
   return (
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
+    <SafeAreaView >
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+     <ProfileHeader name="Hello user" />
+
+     <View style={styles.content}>
+
+     
+
+     </View>
+
+    </SafeAreaView>
   )
 }
 
 export default ProfileScreen
-
-const styles = StyleSheet.create({})

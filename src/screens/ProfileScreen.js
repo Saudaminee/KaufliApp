@@ -45,7 +45,7 @@ const ProfileScreen = () => {
    
    
      <View style={styles.lineView}></View>
-     <TouchableOpacity style={styles.commonTouchProfile}>
+     <TouchableOpacity style={styles.commonTouchProfile} onPress={()=> navigation.navigate("SavedAddress")}>
        <Text style={styles.profileText} >Address</Text>
        <Image style={styles.iconStyle} source={getImageFromURL(IMAGES.NEXT_ICON)}></Image>
      </TouchableOpacity>

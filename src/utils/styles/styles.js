@@ -411,7 +411,7 @@ height:0.5,
 backgroundColor:colors.GRAYS_WHITE},
 
 iconStyle:{
-  height:24,width:24,resizeMode:'contain'
+  height:18,width:18,resizeMode:'contain'
 },
 filerStyle: {
     flexDirection: 'row',

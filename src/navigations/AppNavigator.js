@@ -13,6 +13,8 @@ import ProfileScreen from "../screens/ProfileScreen";
 import Notifications from "../screens/Notifications";
 import BottomTabsManager from "../navigations/BottomTabsManager";
 import OrderHistory from "../screens/OrderHistory";
+import SavedAddress from "../screens/SavedAddress";
+
 import { connect } from "react-redux";
 const Stack = createStackNavigator();
 
@@ -79,7 +81,13 @@ const AppNavigator = ({ token }) => {
           component={OrderHistory}
           options={{ headerShown: false }}
         />
-        
+        <Stack.Screen
+          name="SavedAddress"
+          component={SavedAddress}
+          options={{ headerShown: false }}
+        />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -106,6 +106,26 @@ const ProfileScreen = () => {
               source={getImageFromURL(IMAGES.NEXT_ICON)}
             ></Image>
           </TouchableOpacity>
+     <Text style={[styles.profileText,{fontSize:12,fontWeight:'bold',paddingHorizontal:'5%',paddingTop:'5%'}]} >My Activity </Text>
+    
+     <TouchableOpacity style={[styles.commonTouchProfile,{marginTop:'3%'}]}>
+       <Text style={styles.profileText} >My Rewards</Text>
+       <Image style={styles.iconStyle} source={getImageFromURL(IMAGES.NEXT_ICON)}></Image>
+     </TouchableOpacity>
+     <View style={styles.lineView}></View>
+    
+     <TouchableOpacity style={styles.commonTouchProfile} onPress={()=> navigation.navigate("OrderHistory")}>
+       <Text style={styles.profileText} >Orders</Text>
+       <Image style={styles.iconStyle} source={getImageFromURL(IMAGES.NEXT_ICON)}></Image>
+     </TouchableOpacity>
+   
+   
+     <View style={styles.lineView}></View>
+     <TouchableOpacity style={styles.commonTouchProfile} onPress={()=> navigation.navigate("SavedAddress")}>
+       <Text style={styles.profileText} >Address</Text>
+       <Image style={styles.iconStyle} source={getImageFromURL(IMAGES.NEXT_ICON)}></Image>
+     </TouchableOpacity>
+     <View style={styles.lineView}></View>
 
           <View style={styles.lineView}></View>
           <TouchableOpacity style={styles.commonTouchProfile}>

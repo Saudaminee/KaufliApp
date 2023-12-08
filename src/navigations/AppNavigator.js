@@ -13,9 +13,11 @@ import ProfileScreen from "../screens/ProfileScreen";
 import Notifications from "../screens/Notifications";
 import BottomTabsManager from "../navigations/BottomTabsManager";
 import OrderHistory from "../screens/OrderHistory";
+import { connect } from "react-redux";
 const Stack = createStackNavigator();
 
-const AppNavigator = () => {
+const AppNavigator = ({ token }) => {
+  console.log("token,", token);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -82,5 +84,8 @@ const AppNavigator = () => {
     </NavigationContainer>
   );
 };
-
+const mapStateToProps = (state) => ({
+  token: state.auth.token,
+});
 export default AppNavigator;
+//export default connect(mapStateToProps)(AppNavigator);

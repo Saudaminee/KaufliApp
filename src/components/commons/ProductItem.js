@@ -34,7 +34,7 @@ const ProductItem = ({
     discount: discount,
   };
   const goToDetailedScreen = () => {
-    navigation.navigate("DetailedScreen", (data = { data }));
+    navigation.navigate("DetailedScreen", data);
   };
   return (
     <TouchableOpacity

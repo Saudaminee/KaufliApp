@@ -6,6 +6,7 @@ import {
   StatusBar,
   SafeAreaView,
   KeyboardAvoidingView,
+  ToastAndroid,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import CustomTextInput from "../commons/CustomTextInput";
@@ -13,14 +14,51 @@ import CustomButton from "../commons/CustomButton";
 import staticContents from "../../utils/staticContents";
 import styles from "../../utils/styles/styles";
 import { colors } from "../../utils/styles/colors";
+import { login } from "../../stores/actions/authActions";
+import { connect, useDispatch } from "react-redux";
 
-const Login = ({ navigation }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({ login, error, navigation }) => {
+  const [credentials, setCredentials] = useState({
+    useremail: "",
+    userpassword: "",
+  });
   const [hidepassword, setHidePassword] = useState(true);
+  const dispatch = useDispatch();
+  const isEmailValid = (email) => {
+    // Basic email validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
+  const isPasswordValid = (password) => {
+    // Password should be at least 6 characters long
+    return password.length >= 6;
+  };
+  const handleLogin = () => {
+    // if (!credentials.username || !credentials.userpassword) {
+    //   ToastAndroid.show(
+    //     "Please fill in all fields",
+    //     ToastAndroid.showWithGravity
+    //   );
+    //   return;
+    // }
+    // if (!isEmailValid(credentials.useremail)) {
+    //   ToastAndroid.show(
+    //     "Please enter a valid email address",
+    //     ToastAndroid.showWithGravity
+    //   );
+    //   return;
+    // }
+    // if (!isPasswordValid(credentials.userpassword)) {
+    //   ToastAndroid.show(
+    //     "Password should be at least 6 characters long",
+    //     ToastAndroid.showWithGravity
+    //   );
+    //   return;
+    // }
+    login(credentials, navigation);
+  };
   return (
-    <SafeAreaView style={[styles.container,{backgroundColor:colors.WHITE}]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.WHITE }]}>
       <Image
         source={require("../../assets/logo.png")}
         style={styles.logo_style}
@@ -30,16 +68,20 @@ const Login = ({ navigation }) => {
         <View style={{ marginTop: 10 }}>
           <CustomTextInput
             placeholder=" Enter email address"
-            value={email}
-            onChangeText={(txt) => setEmail(txt)}
+            value={credentials.useremail}
+            onChangeText={(text) =>
+              setCredentials({ ...credentials, useremail: text })
+            }
           />
 
           <View style={styles.eyebutton_style}>
             <View style={{ flexDirection: "row" }}>
               <CustomTextInput
                 placeholder={staticContents.enter_password}
-                value={password}
-                onChangeText={(txt) => setPassword(txt)}
+                value={credentials.userpassword}
+                onChangeText={(text) =>
+                  setCredentials({ ...credentials, userpassword: text })
+                }
                 secureTextEntry={hidepassword}
               />
             </View>
@@ -71,7 +113,7 @@ const Login = ({ navigation }) => {
             <CustomButton
               title={"Sign In"}
               onClick={() => {
-                navigation.navigate("HomeScreen");
+                handleLogin();
               }}
             />
           </View>
@@ -86,7 +128,10 @@ const Login = ({ navigation }) => {
             </Text>
             <TouchableOpacity onPress={() => navigation.navigate("Register")}>
               <Text
-                style={[styles.BottomTxt, { color: colors.DARK_BLACK, fontSize: 14 }]}
+                style={[
+                  styles.BottomTxt,
+                  { color: colors.DARK_BLACK, fontSize: 14 },
+                ]}
               >
                 {" "}
                 {staticContents.create_new_text}
@@ -98,5 +143,8 @@ const Login = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+const mapDispatchToProps = {
+  login,
+};
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

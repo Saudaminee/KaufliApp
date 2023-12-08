@@ -1,18 +1,14 @@
-import {
-  StyleSheet,
-  Dimensions,
-  StatusBar
-} from 'react-native';
-import { colors } from '../styles/colors';
+import { StyleSheet, Dimensions, StatusBar } from "react-native";
+import { colors } from "../styles/colors";
 // Detect screen width and height
 const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   containerApp: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     backgroundColor: colors.GRAYS_WHITE,
-    flexDirection: 'column'
+    flexDirection: "column",
   },
   headerContainer: {
     flex: 0.1,
@@ -22,16 +18,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: "row",
     elevation: 0.3,
-    alignItems: 'center',
-    position: 'absolute',
-    backgroundColor: colors.BASE_TEXT_COLOR
+    alignItems: "center",
+    position: "absolute",
+    backgroundColor: colors.BASE_TEXT_COLOR,
   },
   header_txtStyle: {
-    color: 'white',
-    textAlign: 'center',
-    alignSelf: 'center',
-    marginLeft: '2%',
-    fontSize: 18
+    color: "white",
+    textAlign: "center",
+    alignSelf: "center",
+    marginLeft: "2%",
+    fontSize: 18,
   },
   headerLogo: {
     width: 43,
@@ -285,49 +281,52 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F1F2",
     flex: 2,
   },
-  inputBox:{
-    borderColor: 'black', backgroundColor: 'red', borderWidth: 1,borderRadius:23, overflow: 'hidden'
+  inputBox: {
+    borderColor: "black",
+    backgroundColor: "red",
+    borderWidth: 1,
+    borderRadius: 23,
+    overflow: "hidden",
   },
   content: {
     flex: 1,
-    flexDirection:'column',
-    backgroundColor:colors.WHITE,
-    marginTop:5,
-    padding:10,
-    borderTopLeftRadius:15,
-    borderTopRightRadius:15
+    flexDirection: "column",
+    backgroundColor: colors.WHITE,
+    marginTop: 5,
+    padding: 10,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
   },
   headerContainerDashboard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'red',
-    marginTop:StatusBar.currentHeight,
-    paddingTop:24,
-    paddingBottom:20
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "red",
+    marginTop: StatusBar.currentHeight,
+    paddingTop: 24,
+    paddingBottom: 20,
   },
-  seeAll:{
-      width:20,
-      height:20,
-      backgroundColor:colors.GRAYS_WHITE,
-      borderColor:colors.GRAYS_WHITE,
-      borderWidth:1,
-      borderRadius:40,
-      marginRight: 16,
-      justifyContent:'center',
-      alignItems:'center'
+  seeAll: {
+    width: 20,
+    height: 20,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderColor: colors.GRAYS_WHITE,
+    borderWidth: 1,
+    borderRadius: 40,
+    marginRight: 16,
+    justifyContent: "center",
+    alignItems: "center",
   },
   seeAllicon: {
     width: 18,
-    height: 18
-    
+    height: 18,
   },
-  categoryStyle:{
-    width:60,
-    height:60,
-    backgroundColor:colors.GRAYS_WHITE,
-    borderColor:colors.GRAYS_WHITE,
-    borderWidth:1,
-    borderRadius:50,
+  categoryStyle: {
+    width: 60,
+    height: 60,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderColor: colors.GRAYS_WHITE,
+    borderWidth: 1,
+    borderRadius: 50,
     marginRight: 16,
     justifyContent:'center',
     alignItems:'center'
@@ -435,8 +434,73 @@ filterIconStyle: {
     alignSelf: 'center',
     paddingHorizontal: 2,
     resizeMode: 'contain'
-}
+},
  
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  // },
+  containerCategory: {
+    marginVertical: 10,
+  },
+  brandContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    borderRadius: 8,
+    marginRight: 16,
+    marginLeft: 10,
+    marginVertical: 15,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  listContainer: {
+    flexDirection: "column",
+  },
+  itemContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  itemImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+    marginRight: 16,
+  },
+  itemName: {
+    fontSize: 18,
+    flex: 1,
+  },
+  removeButton: {
+    color: "red",
+  },
+  image: {
+    width: 150,
+    height: 150,
+    resizeMode: "cover", // or 'contain' based on your preference
+    borderRadius: 8,
+    marginBottom: 8,
+    overflow: "hidden",
+    position: "relative", // or 'absolute' based on your layout
+  },
+  wish_container: {
+    flex: 1,
+    margin: 10,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderRadius: 8,
+    padding: 8,
+  },
+  remove: {
+    width: 28,
+    height: 28,
+    backgroundColor: colors.GRAYS_WHITE,
+    right: "5%",
+    marginTop: 5,
+    position: "absolute",
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 export default styles;

@@ -21,7 +21,7 @@ import { colors } from "../utils/styles/colors";
 import styles from "../utils/styles/styles";
 import { SIZE } from "../utils/constant";
 const DetailedScreen = ({ route, navigation }) => {
-  const DATA = route.params.data;
+  const DATA = route.params;
   console.log(DATA, "DATA");
   const text =
     "Purus torquent sagittis platea at ligula iaculis augue nibh dictum. Pellentesque hac mus nisi donec dis neque sodales eros. Platea tempor ultricies. Nostra porttitor nam penatibus integer sociis cras augue nullam inceptos augue vestibulum nam pharetra maecenas dictumst odio rutrum habitant montes sociis velit at interdum litora venenatis orci lacus et. Pellentesque varius interdum Dictumst ut etiam penatibus dictumst. Condimentum phasellus. Sociis nec vivamus nullam tristique netus duis taciti semper ornare pede turpis mattis morbi vestibulum mauris sodales tortor fringilla egestas, in erat.";

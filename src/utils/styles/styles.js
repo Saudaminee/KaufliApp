@@ -381,6 +381,7 @@ wish_container: {
   backgroundColor: colors.GRAYS_WHITE,
   borderRadius: 8,
   padding: 8,
+  
 },
 remove: {
   width: 28,

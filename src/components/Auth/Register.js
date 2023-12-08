@@ -89,6 +89,14 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
     }
     // Dispatch the signup action
     signup(userData, navigation);
+    setuserData({
+      username: "",
+      useremail: "",
+      usermobile: "",
+      userpassword: "",
+      useraddress: "",
+      userconfirmPass: "",
+    });
   };
 
   return (
@@ -172,7 +180,7 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
               onChangeText={(txt) =>
                 setuserData({ ...userData, userconfirmPass: txt })
               }
-              secureTextEntry={hidepassword}
+              secureTextEntry={confirnHidepassword}
             />
           </View>
           {errortxt && <Text style={{ color: "red" }}>{error}</Text>}

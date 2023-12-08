@@ -237,6 +237,7 @@ const HomeScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           </View>
+          
           <FlatList
             data={products}
             keyExtractor={(item) => item.id.toString()}

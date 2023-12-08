@@ -34,27 +34,27 @@ const Login = ({ login, error, navigation }) => {
     return password.length >= 6;
   };
   const handleLogin = () => {
-    // if (!credentials.username || !credentials.userpassword) {
-    //   ToastAndroid.show(
-    //     "Please fill in all fields",
-    //     ToastAndroid.showWithGravity
-    //   );
-    //   return;
-    // }
-    // if (!isEmailValid(credentials.useremail)) {
-    //   ToastAndroid.show(
-    //     "Please enter a valid email address",
-    //     ToastAndroid.showWithGravity
-    //   );
-    //   return;
-    // }
-    // if (!isPasswordValid(credentials.userpassword)) {
-    //   ToastAndroid.show(
-    //     "Password should be at least 6 characters long",
-    //     ToastAndroid.showWithGravity
-    //   );
-    //   return;
-    // }
+    if (!credentials.useremail || !credentials.userpassword) {
+      ToastAndroid.show(
+        "Please fill in all fields",
+        ToastAndroid.showWithGravity
+      );
+      return;
+    }
+    if (!isEmailValid(credentials.useremail)) {
+      ToastAndroid.show(
+        "Please enter a valid email address",
+        ToastAndroid.showWithGravity
+      );
+      return;
+    }
+    if (!isPasswordValid(credentials.userpassword)) {
+      ToastAndroid.show(
+        "Password should be at least 6 characters long",
+        ToastAndroid.showWithGravity
+      );
+      return;
+    }
     login(credentials, navigation);
   };
   return (

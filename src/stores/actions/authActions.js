@@ -73,10 +73,17 @@ export const signup = (userData, navigation) => async (dispatch) => {
   }
 };
 
-export const logout = () => async (dispatch) => {
-  // Clear user data from AsyncStorage
-  await removeItem("authToken");
+export const logout =
+  ({ navigation }) =>
+  async (dispatch) => {
+    try {
+      // Remove authentication-related data from AsyncStorage
+      await AsyncStorage.removeItem("authToken");
 
-  // Dispatch logout action
-  dispatch({ type: actionTypes.LOGOUT });
-};
+      // Dispatch the logout action
+      dispatch({ type: actionTypes.LOGOUT });
+      navigation.navigate("Login");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };

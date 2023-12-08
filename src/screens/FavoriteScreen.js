@@ -71,96 +71,120 @@ const FavoriteScreen = ({ navigation }) => {
     console.log("item", JSON.stringify(item));
     return (
       <TouchableOpacity
-        style={styles.wish_container}
-        onPress={() =>
-          navigation.navigate("DetailedScreen", {
-            id: item.id,
-            name: item.name,
-            image: item.image,
-            price: item.price,
-            shortDetail: item.shortDetail,
-            offer: item.offer,
-            discount: item.discount,
-          })
-        }
+      //style={styles.wish_container}
+      onPress={() =>
+        navigation.navigate("DetailedScreen", {
+          id: item.id,
+          name: item.name,
+          image: item.image,
+          price: item.price,
+          shortDetail: item.shortDetail,
+          offer: item.offer,
+          discount: item.discount,
+        })
+      }
       >
-        <ImageBackground
-          resizeMode={"cover"}
-          source={item.image}
-          style={styles.image}
-        >
-          <TouchableOpacity
-            style={styles.remove}
-            onPress={() => removeFromWishlist(item.id)}
-          >
-            <Image
-              source={getImageFromURL(IMAGES.LIKE)}
-              style={{ height: 15, width: 15, tintColor: "red" }}
-            />
-          </TouchableOpacity>
-        </ImageBackground>
-        <Text style={{ fontSize: 15, marginStart: 4 }}>{item.name}</Text>
         <View
           style={{
+            width: 182,
+            height: 240,
+            marginEnd: 22,
+            borderRadius: 10,
+            backgroundColor: colors.GRAYS_WHITE,
+            justifyContent: "space-between",
             alignItems: "center",
-            flexDirection: "row",
+            marginTop: 10,
+            // backgroundColor: "red",
           }}
         >
-          <Text style={{ fontSize: 13, marginStart: 4, color: "#000" }}>
-            {item.price}
-          </Text>
-          <Text
+          <ImageBackground
+            resizeMode={"cover"}
+            source={item.image}
+            // style={styles.image}
             style={{
-              fontSize: 13,
-              marginStart: 4,
-              color: "red",
-              marginVertical: 4,
+              flex: 1,
+              width: 160,
+              borderRadius: 10,
+              overflow: "hidden",
+              marginVertical: 10,
             }}
           >
-            {" "}
-            ({item.offer} OFF)
-          </Text>
-        </View>
-        <View
-          style={{
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text style={{ fontSize: 15, color: "#000", marginStart: 4 }}>
-              4.2
+            <TouchableOpacity
+              style={styles.remove}
+              onPress={() => removeFromWishlist(item.id)}
+            >
+              <Image
+                source={getImageFromURL(IMAGES.LIKE)}
+                style={{ height: 15, width: 15, tintColor: "red" }}
+              />
+            </TouchableOpacity>
+          </ImageBackground>
+
+          <Text style={{ fontSize: 15, marginStart: 4 }}>{item.name}</Text>
+          <View
+            style={{
+              alignItems: "center",
+              flexDirection: "row",
+            }}
+          >
+            <Text style={{ fontSize: 13, marginStart: 4, color: "#000" }}>
+              ₹ {item.price}
             </Text>
-            <Image
-              source={getImageFromURL(IMAGES.RATESTAR)}
+            <Text
               style={{
-                height: 14,
-                width: 14,
-                resizeMode: "contain",
-                left: 4,
-                top: 3,
-                tintColor: "#03A685",
+                fontSize: 13,
+                marginStart: 4,
+                color: "red",
+                marginVertical: 4,
               }}
-            />
+            >
+              {" "}
+              ({item.offer} OFF)
+            </Text>
           </View>
-          <Text
+          <View
             style={{
-              fontSize: 13,
-              marginStart: 5,
-              color: "grey",
-              marginTop: 5,
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              marginBottom: 5,
             }}
           >
-            {" "}
-            (112)
-          </Text>
+            <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+              <Text style={{ fontSize: 15, color: "#000", marginStart: 4 }}>
+                4.2
+              </Text>
+              <Image
+                source={getImageFromURL(IMAGES.RATESTAR)}
+                style={{
+                  height: 14,
+                  width: 14,
+                  resizeMode: "contain",
+                  left: 4,
+                  top: 3,
+                  tintColor: "#03A685",
+                }}
+              />
+            </View>
+            <Text
+              style={{
+                fontSize: 13,
+                marginStart: 5,
+                color: "grey",
+                // marginTop: 5,
+                textAlign: "right",
+              }}
+            >
+              {" "}
+              (112)
+            </Text>
+          </View>
         </View>
       </TouchableOpacity>
     );
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header title="My Wishlists" items={wishlistItems.length + " items"} />
       <View
         style={{
@@ -177,7 +201,12 @@ const FavoriteScreen = ({ navigation }) => {
           numColumns={2}
           keyExtractor={(item) => item.id}
           renderItem={renderWishlistItem}
-          contentContainerStyle={styles.listContainer}
+          // contentContainerStyle={{
+          //   flex: 1,
+          //   alignItems: "center",
+          //   justifyContent: "center",
+          //   alignContent: "center",
+          // }}
           showsVerticalScrollIndicator={false}
         />
       </View>

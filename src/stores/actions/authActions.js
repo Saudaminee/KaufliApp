@@ -87,3 +87,11 @@ export const logout =
       console.error("Error logging out:", error);
     }
   };
+
+export const addAddress = () => {
+  dispatch({ type: actionTypes.ADD_ADDRESS, payload: userData });
+};
+
+export const removeAddress = (index) => {
+  dispatch({ type: actionTypes.ADD_ADDRESS, payload: userData });
+};

@@ -16,6 +16,7 @@ import OrderHistory from "../screens/OrderHistory";
 import SavedAddress from "../screens/SavedAddress";
 
 import { connect } from "react-redux";
+import AddNewAddress from "../screens/AddNewAddress";
 const Stack = createStackNavigator();
 
 const AppNavigator = ({ token }) => {
@@ -86,8 +87,11 @@ const AppNavigator = ({ token }) => {
           component={SavedAddress}
           options={{ headerShown: false }}
         />
-
-
+        <Stack.Screen
+          name="AddNewAddress"
+          component={AddNewAddress}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

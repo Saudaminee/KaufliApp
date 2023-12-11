@@ -1,18 +1,96 @@
-import { Text, View ,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native'
-import React from 'react'
-import CommonHeaders from '../components/commons/CommonHeaders'
-import styles from '../utils/styles/styles'
-import { colors } from '../utils/styles/colors'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  FlatList,
+  SafeAreaView,
+} from "react-native";
+import React, { useEffect } from "react";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { useSelector, connect } from "react-redux";
+import { removeAddress } from "../stores/actions/authActions";
 
+let addressList = [];
 const SavedAddress = () => {
+  const navigation = useNavigation();
+  const isFocused = useIsFocused();
+  const addressList = useSelector((state) => state.AddressReducers);
+
+  console.log(addressList);
+
   return (
-    <SafeAreaView>
-     <StatusBar backgroundColor="white" barStyle="dark-content" />
-     <ProfileHeader title="Delivery addresses"  />
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            width: "100%",
+            height: 70,
+            justifyContent: "space-between",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontWeight: "600", fontSize: 18, marginLeft: 15 }}>
+            My Address
+          </Text>
+          <TouchableOpacity
+            style={{
+              marginRight: 20,
+              justifyContent: "center",
+              alignItems: "center",
+              borderWidth: 0.2,
+              padding: 7,
+              borderRadius: 10,
+            }}
+            onPress={() => {
+              navigation.navigate("AddNewAddress");
+            }}
+          >
+            <Text>Add Address</Text>
+          </TouchableOpacity>
+        </View>
+        <FlatList
+          data={addressList}
+          renderItem={({ item, index }) => {
+            return (
+              <View
+                style={{
+                  width: "100%",
 
-      <Text>SavedAddress</Text>
+                  borderWidth: 0.2,
+                  borderColor: "#8e8e8e",
+                  alignSelf: "center",
+
+                  justifyContent: "space-between",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <View>
+                  <Text style={{ marginLeft: 20 }}>{"City: " + item.city}</Text>
+                  <Text style={{ marginLeft: 20 }}>
+                    {"Building: " + item.building}
+                  </Text>
+                  <Text style={{ marginLeft: 20, marginBottom: 10 }}>
+                    {"Pincode: " + item.pincode}
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  style={{ borderWidth: 0.2, padding: 7, marginRight: 20 }}
+                  onPress={() => {
+                    removeAddress(index);
+                  }}
+                >
+                  <Text>Delete address</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+        />
+      </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default SavedAddress
+export default SavedAddress;

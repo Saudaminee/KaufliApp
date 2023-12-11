@@ -6,6 +6,7 @@ const initialState = {
   user: null,
   error: null,
   token: null,
+  address: [],
 };
 
 const authReducer = (state = initialState, action) => {
@@ -36,6 +37,13 @@ const authReducer = (state = initialState, action) => {
         token: null,
         user: null,
       };
+    case actionTypes.ADD_ADDRESS:
+      return [...state, action.payload];
+    case actionTypes.REMOVE_ADDRESS:
+      const deleteArray1 = state.address.filter((item, index) => {
+        return index !== action.payload;
+      });
+      return deleteArray1;
     //return initialState;
     default:
       return state;

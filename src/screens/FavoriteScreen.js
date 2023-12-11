@@ -35,8 +35,8 @@ const FavoriteScreen = ({ navigation }) => {
       name: "4WRD by Dressberry",
       price: 500,
 
-      name: "MI Super Bass Bluetooth Wireless Headphones",
-      price: "$30",
+      name: "Men Shoe",
+      price: "300",
       shortDetail: "Short detail 2",
       offer: "10% off",
       discount: 10,
@@ -44,7 +44,7 @@ const FavoriteScreen = ({ navigation }) => {
     {
       id: 3,
       image: getImageFromURL(IMAGES.CLOTH_DUMMY),
-      name: "MI Super Bass Bluetooth Wireless Headphones",
+      name: "4WRD by Dressberry",
       price: 500,
       shortDetail: "Short detail 1",
       offer: "20% off",
@@ -53,7 +53,7 @@ const FavoriteScreen = ({ navigation }) => {
     {
       id: 4,
       image: getImageFromURL(IMAGES.SHOO),
-      name: "MI Super Bass Bluetooth Wireless Headphones",
+      name: "Men Shoe",
       price: 300,
       shortDetail: "Short detail 2",
       offer: "10% off",
@@ -70,44 +70,24 @@ const FavoriteScreen = ({ navigation }) => {
   const renderWishlistItem = ({ item }) => {
     console.log("item", JSON.stringify(item));
     return (
-      <TouchableOpacity
-      //style={styles.wish_container}
-      onPress={() =>
-        navigation.navigate("DetailedScreen", {
-          id: item.id,
-          name: item.name,
-          image: item.image,
-          price: item.price,
-          shortDetail: item.shortDetail,
-          offer: item.offer,
-          discount: item.discount,
-        })
-      }
+      <View
+        style={{
+          alignItems: "center",
+          backgroundColor: colors.GRAYS_WHITE,
+          alignContent: "center",
+          alignSelf: "center",
+          marginHorizontal: 14,
+          marginVertical: 10,
+          padding: 10,
+          borderRadius: 8,
+          justifyContent:'center'
+        }}
       >
-        <View
-          style={{
-            width: 182,
-            height: 240,
-            marginEnd: 22,
-            borderRadius: 10,
-            backgroundColor: colors.GRAYS_WHITE,
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: 10,
-            // backgroundColor: "red",
-          }}
-        >
+        <View>
           <ImageBackground
             resizeMode={"cover"}
             source={item.image}
-            // style={styles.image}
-            style={{
-              flex: 1,
-              width: 160,
-              borderRadius: 10,
-              overflow: "hidden",
-              marginVertical: 10,
-            }}
+            style={styles.image}
           >
             <TouchableOpacity
               style={styles.remove}
@@ -119,60 +99,44 @@ const FavoriteScreen = ({ navigation }) => {
               />
             </TouchableOpacity>
           </ImageBackground>
-
-          <Text style={{ fontSize: 15, marginStart: 4 }}>{item.name}</Text>
+        </View>
+        <View>
+          <Text>{item.name}</Text>
           <View
             style={{
-              alignItems: "center",
               flexDirection: "row",
+              justifyContent: "space-between",
+              marginVertical: 4,
             }}
           >
-            <Text style={{ fontSize: 13, marginStart: 4, color: "#000" }}>
-              ₹ {item.price}
+            <Text>
+              {"\u20B9"} {item.price}
             </Text>
-            <Text
-              style={{
-                fontSize: 13,
-                marginStart: 4,
-                color: "red",
-                marginVertical: 4,
-              }}
-            >
-              {" "}
-              ({item.offer} OFF)
-            </Text>
+            <Text style={{ color: "red" }}> {item.offer}</Text>
           </View>
+
           <View
             style={{
-              alignItems: "center",
               flexDirection: "row",
+              alignItems: "center",
               justifyContent: "flex-end",
-              marginBottom: 5,
             }}
           >
-            <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-              <Text style={{ fontSize: 15, color: "#000", marginStart: 4 }}>
-                4.2
-              </Text>
-              <Image
-                source={getImageFromURL(IMAGES.RATESTAR)}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: "contain",
-                  left: 4,
-                  top: 3,
-                  tintColor: "#03A685",
-                }}
-              />
-            </View>
+            <Text style={{ color: "#000" }}>4.2</Text>
+            <Image
+              source={getImageFromURL(IMAGES.RATESTAR)}
+              style={{
+                height: 14,
+                width: 14,
+                resizeMode: "contain",
+                left: 4,
+                tintColor: "#03A685",
+              }}
+            />
             <Text
               style={{
-                fontSize: 13,
                 marginStart: 5,
                 color: "grey",
-                // marginTop: 5,
-                textAlign: "right",
               }}
             >
               {" "}
@@ -180,11 +144,11 @@ const FavoriteScreen = ({ navigation }) => {
             </Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   };
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <Header title="My Wishlists" items={wishlistItems.length + " items"} />
       <View
         style={{
@@ -201,12 +165,7 @@ const FavoriteScreen = ({ navigation }) => {
           numColumns={2}
           keyExtractor={(item) => item.id}
           renderItem={renderWishlistItem}
-          // contentContainerStyle={{
-          //   flex: 1,
-          //   alignItems: "center",
-          //   justifyContent: "center",
-          //   alignContent: "center",
-          // }}
+          contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
         />
       </View>

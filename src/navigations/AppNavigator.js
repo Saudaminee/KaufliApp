@@ -14,6 +14,9 @@ import Notifications from "../screens/Notifications";
 import BottomTabsManager from "../navigations/BottomTabsManager";
 import OrderHistory from "../screens/OrderHistory";
 import SavedAddress from "../screens/SavedAddress";
+import BrandsScreen from "../screens/BrandsScreen";
+import CategoriesScreen from "../screens/CategoriesScreen";
+import SaleScreen from "../screens/SaleScreen";
 
 import { connect } from "react-redux";
 import AddNewAddress from "../screens/AddNewAddress";
@@ -92,6 +95,22 @@ const AppNavigator = ({ token }) => {
           component={AddNewAddress}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="BrandsScreen"
+          component={BrandsScreen}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="CategoriesScreen"
+          component={CategoriesScreen}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="SaleScreen"
+          component={SaleScreen}
+          options={{ headerShown: false }}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

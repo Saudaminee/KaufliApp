@@ -5,20 +5,16 @@ import {
   StatusBar,
   ScrollView,
   TouchableOpacity,
-  FlatList,
   Image,
   Dimensions,
   Animated,
   ToastAndroid,
 } from "react-native";
 import { Items, COLOURS } from "../components/database/Database";
-import Entypo from "react-native-vector-icons/Entypo";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getImageFromURL, IMAGES } from "../resources/images";
-import CategoryItem from "../components/commons/CategoryItem";
-import { colors } from "../utils/styles/colors";
 import styles from "../utils/styles/styles";
+import { colors } from "../utils/styles/colors";
 import { SIZE } from "../utils/constant";
 const DetailedScreen = ({ route, navigation }) => {
   const DATA = route.params;
@@ -28,6 +24,7 @@ const DetailedScreen = ({ route, navigation }) => {
   var maxLines = 1;
   const [isLiked, setIsLiked] = useState(false);
   const [showFullText, setShowFullText] = useState(false);
+  const [isSizeSelected, setisSizeSekected] = useState(false);
   const handlePress = () => {
     setIsLiked(!isLiked);
   };
@@ -242,7 +239,27 @@ const DetailedScreen = ({ route, navigation }) => {
             </Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {SIZE.map((size) => (
-                <CategoryItem key={size.id} title={size.title} />
+              
+                <View style={{marginVertical:10}}>
+      {/* <Image source={image} style={styles.categoryStyle} /> */}
+      <TouchableOpacity style={{
+        width: 50,
+    height: 50,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderColor: colors.GRAYS_WHITE,
+    borderWidth: 1,
+    borderRadius: 50,
+    marginRight: 16,
+    justifyContent:'center',
+    alignItems:'center'}}
+    onPress={()=> console.log(size.id)}>
+        <Text
+          style={{ textAlign: "center", fontSize: 11, color: colors.BLACK }}
+        >
+          {size.title}
+        </Text>
+      </TouchableOpacity>
+    </View>
               ))}
             </ScrollView>
           </View>

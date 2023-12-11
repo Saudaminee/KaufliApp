@@ -17,9 +17,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getImageFromURL, IMAGES } from "../resources/images";
 import CategoryItem from "../components/commons/CategoryItem";
+import SizeItem from "../components/commons/SizeItem";
 import { colors } from "../utils/styles/colors";
 import styles from "../utils/styles/styles";
 import { SIZE } from "../utils/constant";
+import DetailScreenHeader from "../components/commons/DetailScreenHeader";
+
 const DetailedScreen = ({ route, navigation }) => {
   const DATA = route.params;
   console.log(DATA, "DATA");
@@ -79,7 +82,7 @@ const DetailedScreen = ({ route, navigation }) => {
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: COLOURS.white,
+        backgroundColor: colors.GRAYS_WHITE,
         position: "relative",
         flex: 1,
       }}
@@ -89,6 +92,7 @@ const DetailedScreen = ({ route, navigation }) => {
         backgroundColor={COLOURS.backgroundLight}
         barStyle="dark-content"
       />
+      <DetailScreenHeader title="My product"></DetailScreenHeader>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* product image */}
@@ -104,7 +108,7 @@ const DetailedScreen = ({ route, navigation }) => {
             marginBottom: 4,
           }}
         >
-          <View
+          {/* <View
             style={{
               width: "100%",
               flexDirection: "row",
@@ -129,7 +133,7 @@ const DetailedScreen = ({ route, navigation }) => {
                 resizeMode={"center"}
               />
             </TouchableOpacity>
-          </View>
+          </View> */}
           {/* Image View */}
           <View
             style={{
@@ -165,7 +169,7 @@ const DetailedScreen = ({ route, navigation }) => {
           >
             <Text
               style={{
-                fontSize: 22,
+                fontSize: 15,
                 fontWeight: "600",
                 letterSpacing: 0.5,
                 marginVertical: 4,
@@ -178,7 +182,7 @@ const DetailedScreen = ({ route, navigation }) => {
             {/* description text */}
             <Text
               style={{
-                fontSize: 15,
+                fontSize: 12,
                 color: COLOURS.black,
                 letterSpacing: 1,
                 opacity: 0.5,
@@ -194,13 +198,13 @@ const DetailedScreen = ({ route, navigation }) => {
           <View style={{ maxWidth: "100%" }}>
             <Text
               numberOfLines={showFullText ? undefined : maxLines}
-              style={{ letterSpacing: 0.5 }}
+              style={{ letterSpacing: 0.5,fontSize:12 }}
             >
               {text}
             </Text>
             {text.length > maxLines * 20 && ( // Assuming 20 characters per line as an estimate
               <TouchableOpacity onPress={toggleReadMore}>
-                <Text style={{ color: "#03A685" }}>
+                <Text style={{ color: "#03A685",fontSize:11 }}>
                   {showFullText ? "Read less" : "Read more"}
                 </Text>
               </TouchableOpacity>
@@ -210,22 +214,17 @@ const DetailedScreen = ({ route, navigation }) => {
           <View style={{ flexDirection: "row", marginTop: 10 }}>
             <Text
               style={{
-                fontSize: 15,
+                fontSize: 13,
                 maxWidth: "85%",
                 color: colors.GRAY,
                 marginBottom: 4,
-              }}
-            >
-              MRP
-            </Text>
+              }} >  MRP </Text>
             <Text
               style={{
-                fontSize: 15,
+                fontSize: 12,
                 maxWidth: "85%",
                 color: "#000",
-              }}
-            >
-              {" "}
+              }}>
               &#8377; {DATA.price}.00
             </Text>
           </View>
@@ -233,7 +232,7 @@ const DetailedScreen = ({ route, navigation }) => {
           <View style={{ marginTop: 8 }}>
             <Text
               style={{
-                fontSize: 17,
+                fontSize: 14,
                 color: colors.DARK_BLACK,
                 fontWeight: "500",
               }}
@@ -242,7 +241,7 @@ const DetailedScreen = ({ route, navigation }) => {
             </Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {SIZE.map((size) => (
-                <CategoryItem key={size.id} title={size.title} />
+                <SizeItem key={size.id} title={size.title} />
               ))}
             </ScrollView>
           </View>
@@ -261,9 +260,11 @@ const DetailedScreen = ({ route, navigation }) => {
             <View
               style={{
                 borderWidth: 0.5,
-                borderRadius: 2,
+                borderRadius: 5,
+                // elevation:3,
                 width: "45%",
                 height: "100%",
+                backgroundColor:colors.WHITE,
                 flexDirection: "row",
                 padding: 10,
                 justifyContent: "center",
@@ -287,26 +288,19 @@ const DetailedScreen = ({ route, navigation }) => {
                   color: "#000",
                   fontWeight: "500",
                   marginStart: 10,
-                  fontSize: 12,
-                }}
-              >
-                {" "}
-                wishlist
-              </Text>
+                  fontSize: 12}} > wishlist </Text>
             </View>
 
             <View
               style={{
                 borderWidth: 1,
-                borderRadius: 2,
+                borderRadius: 5,
                 width: "45%",
                 height: "100%",
                 backgroundColor: colors.BLACK,
                 flexDirection: "row",
                 justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+                alignItems: "center" }} >
               <TouchableOpacity>
                 <Image
                   source={getImageFromURL(IMAGES.CARTBAG)}
@@ -324,12 +318,7 @@ const DetailedScreen = ({ route, navigation }) => {
                   color: "#fff",
                   fontWeight: "500",
                   marginStart: 10,
-                  fontSize: 12,
-                }}
-              >
-                {" "}
-                Add to cart
-              </Text>
+                  fontSize: 12 }} > Add to cart </Text>
             </View>
           </View>
 
@@ -337,14 +326,10 @@ const DetailedScreen = ({ route, navigation }) => {
           <View>
             <Text
               style={{
-                fontSize: 17,
+                fontSize: 15,
                 color: colors.DARK_BLACK,
                 fontWeight: "500",
-                marginVertical: 4,
-              }}
-            >
-              Delivery & Services for
-            </Text>
+                marginVertical: 4}} >  Delivery & Services for</Text>
             <View
               style={{
                 flexDirection: "row",
@@ -352,7 +337,8 @@ const DetailedScreen = ({ route, navigation }) => {
                 alignItems: "center",
                 borderColor: "#e3e3e3",
                 borderWidth: 0.5,
-                borderRadius: 2,
+                borderRadius: 5,
+                backgroundColor:colors.WHITE,
                 justifyContent: "space-between",
                 marginTop: 10,
                 padding: 10,

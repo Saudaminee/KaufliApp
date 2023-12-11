@@ -104,6 +104,7 @@ const HomeScreen = () => {
       <HomeHeader location={"Noida"} navigation={navigation} />
       <Search onSearch={handleSearch} />
       {/* <DiscountCard /> */}
+      <ScrollView>
       <View style={styles.content}>
         {/* Your app components */}
         <View>
@@ -156,23 +157,16 @@ const HomeScreen = () => {
               style={{
                 fontSize: 17,
                 color: colors.DARK_BLACK,
-                fontWeight: "800",
-              }} >
-              Brands
-            </Text>
+                fontWeight: "800" }} > Brands</Text>
             <TouchableOpacity
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("BrandsScreen")}
-            >
+              onPress={() => navigation.navigate("BrandsScreen")}>
               <Text
                 style={{
                   fontSize: 12,
                   color: colors.DARK_BLACK,
                   marginRight: 5,
-                  alignSelf: "center",
-                }} >
-                See all
-              </Text>
+                  alignSelf: "center" }} > See all </Text>
               <View style={styles.seeAll}>
                 <Image
                   source={getImageFromURL(IMAGES.NEXT_ICON)}
@@ -189,7 +183,6 @@ const HomeScreen = () => {
                 backgroundColor={getRandomColor()}
               />
             ))}
-            {/* image={category.image} */}
           </ScrollView>
         </View>
 
@@ -244,6 +237,8 @@ const HomeScreen = () => {
           />
         </View>
       </View>
+      </ScrollView>
+     
     </SafeAreaView>
   );
 };

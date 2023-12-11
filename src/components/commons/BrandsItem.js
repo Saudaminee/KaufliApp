@@ -7,8 +7,7 @@ import styles from '../../utils/styles/styles';
 const BrandsItem = ({ title, backgroundColor }) => {
     return (
         <View style={[styles.brandContainer, { backgroundColor}]}>
-          {/* <Image source={image} style={styles.categoryStyle} /> */}
-          <TouchableOpacity style={styles.categoryStyle}>
+          <TouchableOpacity style={styles.brandStyle}>
           <Text style={{textAlign:'center',fontSize:12,color:colors.BLACK,fontWeight:'900'}}>{title}</Text>
           </TouchableOpacity>
          

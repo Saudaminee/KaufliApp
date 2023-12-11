@@ -331,8 +331,16 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
 },
-containerCategory: {
-  marginVertical:10
+brandStyle: {
+  width: 59,
+  height: 59,
+  backgroundColor: colors.GRAYS_WHITE,
+  borderColor: colors.GRAYS_WHITE,
+  borderWidth: 1,
+  borderRadius: 50,
+  // marginRight: 10,
+  justifyContent:'center',
+  alignItems:'center'
 },
 brandContainer: {
   width:60,
@@ -442,17 +450,6 @@ filterIconStyle: {
   // },
   containerCategory: {
     marginVertical: 10,
-  },
-  brandContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 50,
-    borderRadius: 8,
-    marginRight: 16,
-    marginLeft: 10,
-    marginVertical: 15,
-    justifyContent: "center",
-    alignItems: "center",
   },
   listContainer: {
     flexDirection: "column",

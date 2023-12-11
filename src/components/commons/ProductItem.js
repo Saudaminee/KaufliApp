@@ -46,7 +46,7 @@ const ProductItem = ({
         <TouchableOpacity
           style={styles.like}
           onPress={handlePress}
-          // style={{ backgroundColor: isLiked ? styles.like : styles.like }}
+        // style={{ backgroundColor: isLiked ? styles.like : styles.like }}
         >
           <Image
             source={

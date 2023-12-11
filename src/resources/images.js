@@ -20,7 +20,14 @@ export const IMAGES = {
   ACCOUNT_ICON: "ACCOUNT_ICON",
   ACCOUNT_FILL_ICON: "ACCOUNT_FILL_ICON",
   REMOVE: "REMOVE",
-  FILTER_ICON:"FILTER_ICON"
+  FILTER_ICON: "FILTER_ICON",
+  MEN: "MEN",
+  WOMEN: "WOMEN",
+  SHOOCAT: "SHOOCAT",
+  UNISEX: "UNISEX",
+  BAGSCAT: "BAGSCAT",
+  BEAUTY: "BEAUTY",
+  ACCESSORIES: "ACCESSORIES"
 
 };
 const getImage = (name) => {
@@ -112,11 +119,37 @@ const getImage = (name) => {
       iconName = require("../assets/logout.png")
       break;
 
-      case IMAGES.FILTER_ICON:
-        iconName = require("../assets/sort.png")
-        break;
+    case IMAGES.FILTER_ICON:
+      iconName = require("../assets/sort.png")
+      break;
 
+    case IMAGES.MEN:
+      iconName = require("../assets/men.png")
+      break;
 
+    case IMAGES.WOMEN:
+      iconName = require("../assets/women.png")
+      break;
+
+    case IMAGES.SHOOCAT:
+      iconName = require("../assets/sho.png")
+      break;
+
+    case IMAGES.UNISEX:
+      iconName = require("../assets/unisex.png")
+      break;
+
+    case IMAGES.BAGSCAT:
+      iconName = require("../assets/bags.png")
+      break;
+
+    case IMAGES.BEAUTY:
+      iconName = require("../assets/beauty.png")
+      break;
+
+    case IMAGES.ACCESSORIES:
+      iconName = require("../assets/jewellery.png")
+      break;
   }
   return iconName;
 };

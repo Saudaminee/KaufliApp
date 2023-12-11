@@ -18,8 +18,11 @@ import DiscountCard from "../components/commons/DiscountCard";
 import CategoryItem from "../components/commons/CategoryItem";
 import ProductItem from "../components/commons/ProductItem";
 import BrandsItem from "../components/commons/BrandsItem";
+import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
+  const navigation = useNavigation();
+
   const categories = [
     { id: 1, title: "Man" },
     { id: 2, title: "Women" },
@@ -111,12 +114,11 @@ const HomeScreen = ({ navigation }) => {
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
               }}>
-              {" "}
               Categories
             </Text>
             <TouchableOpacity
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("Notifications")}
+              onPress={() => navigation.navigate("CategoriesScreen")}
             >
               <Text
                 style={{
@@ -124,9 +126,7 @@ const HomeScreen = ({ navigation }) => {
                   color: colors.DARK_BLACK,
                   marginRight: 5,
                   alignSelf: "center",
-                }}
-              >
-                {" "}
+                }}>
                 See all
               </Text>
               <View style={styles.seeAll}>
@@ -141,7 +141,6 @@ const HomeScreen = ({ navigation }) => {
             {categories.map((category) => (
               <CategoryItem key={category.id} title={category.title} />
             ))}
-            {/* image={category.image} */}
           </ScrollView>
         </View>
 
@@ -158,14 +157,12 @@ const HomeScreen = ({ navigation }) => {
                 fontSize: 17,
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
-              }}
-            >
-              {" "}
+              }} >
               Brands
             </Text>
             <TouchableOpacity
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("Notifications")}
+              onPress={() => navigation.navigate("BrandsScreen")}
             >
               <Text
                 style={{
@@ -173,9 +170,7 @@ const HomeScreen = ({ navigation }) => {
                   color: colors.DARK_BLACK,
                   marginRight: 5,
                   alignSelf: "center",
-                }}
-              >
-                {" "}
+                }} >
                 See all
               </Text>
               <View style={styles.seeAll}>
@@ -199,34 +194,27 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <View
-          style={{ paddingBottom: "32%", marginTop: "2%", marginBottom: "34%" }}
-        >
+          style={{ paddingBottom: "32%", marginTop: "2%", marginBottom: "34%" }} >
           <View
-            style={{ justifyContent: "space-between", flexDirection: "row" }}
-          >
+            style={{ justifyContent: "space-between", flexDirection: "row" }} >
             <Text
               style={{
                 fontSize: 17,
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
-              }}
-            >
-              {" "}
+              }} >
               Flash sale
             </Text>
             <TouchableOpacity 
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("Notifications")}
-            >
+              onPress={() => navigation.navigate("SaleScreen")} >
               <Text
                 style={{
                   fontSize: 12,
                   color: colors.DARK_BLACK,
                   marginRight: 5,
                   alignSelf: "center",
-                }}
-              >
-                {" "}
+                }} >
                 See all
               </Text>
               <View style={styles.seeAll}>

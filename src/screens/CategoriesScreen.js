@@ -60,9 +60,7 @@ const CategoriesScreen = () => {
                     <AllCategories
                         id={item.id}
                         name={item.name}
-                        image={item.image}
-
-                    />
+                        image={item.image}/>
                 )}
             />
             </View>

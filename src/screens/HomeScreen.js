@@ -14,7 +14,6 @@ import { colors } from "../utils/styles/colors";
 import HomeHeader from "../components/commons/HomeHeader";
 import Search from "../components/commons/Search";
 import { IMAGES, getImageFromURL } from "../resources/images";
-import DiscountCard from "../components/commons/DiscountCard";
 import CategoryItem from "../components/commons/CategoryItem";
 import ProductItem from "../components/commons/ProductItem";
 import BrandsItem from "../components/commons/BrandsItem";
@@ -80,6 +79,24 @@ const HomeScreen = () => {
       shortDetail: "Short detail 2",
       offer: "10% off",
       discount: 10,
+    },
+    {
+      id: 5,
+      image: getImageFromURL(IMAGES.SHOO),
+      name: "MI Super Bass Bluetooth Wireless Headphones",
+      price: 300,
+      shortDetail: "Short detail 2",
+      offer: "10% off",
+      discount: 10,
+    },
+    {
+      id: 6,
+      image: getImageFromURL(IMAGES.CLOTH_DUMMY),
+      name: "4WRD by Dressberry",
+      price: 500,
+      shortDetail: "Men Blue-Coloured Solid Tailored Jacket",
+      offer: "20% off",
+      discount: 20,
     },
     // Add more products as needed
   ];
@@ -187,7 +204,8 @@ const HomeScreen = () => {
         </View>
 
         <View
-          style={{ paddingBottom: "32%", marginTop: "2%", marginBottom: "34%" }} >
+         // style={{ paddingBottom: "32%", marginTop: "2%", marginBottom: "34%" }} 
+          >
           <View
             style={{ justifyContent: "space-between", flexDirection: "row" }} >
             <Text
@@ -236,7 +254,49 @@ const HomeScreen = () => {
             )}
           />
         </View>
+
+ {/* bottom designs  */}
+ <View style={{backgroundColor:'#DACCC4',width:'100%',height:150,flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+        <Image source={require('../assets/jacket.png')}
+        style={{width:120,height:120}}
+        />
+
+
+        <View style={{alignItems:'center'}} >
+        <Text style={{textTransform:'capitalize',fontWeight:'bold', color:'#000',fontSize:20,textAlign:'center',maxWidth:'65%'}}>   winter jacket and coats </Text>
+        <View
+              style={{
+                borderRadius: 2,
+                backgroundColor: colors.BLACK,
+                justifyContent: "center",
+                alignItems: "center",
+                width:80,height:30,
+                alignContent:'center',marginTop:10
+              }}
+            >
+              
+              <Text
+                style={{
+                  textTransform: "uppercase",
+                  color: "#fff",
+                  fontWeight: "500",
+                  fontSize: 12,
+                  textAlign:'center'
+                }}
+              >
+                {" "}
+                View All 
+              </Text>
+           
+          </View>
+        </View>
+       
+        </View>
+<Text style={{textTransform:'capitalize',fontWeight:'bold', color:'#000',fontSize:25,maxWidth:'50%',marginTop:10}}>Jacket</Text>
+
       </View>
+
+     
       </ScrollView>
      
     </SafeAreaView>

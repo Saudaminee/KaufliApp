@@ -144,8 +144,7 @@ const HomeScreen = () => {
           }}
           inActiveIndicatorStyle={{height:2,width:20,backgroundColor:colors.GRAYS_WHITE}}
           activeIndicatorStyle={{backgroundColor:colors.WHITE,height:2,width:10}}
-          caroselImageStyle={{ resizeMode: 'cover', }}
-        />
+          caroselImageStyle={{ resizeMode: 'cover'}} />
       </View>
       <View style={styles.content}>
           {/* Your app components */}

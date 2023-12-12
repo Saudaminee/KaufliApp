@@ -22,7 +22,7 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
     useremail: "",
     usermobile: "",
     userpassword: "",
-    useraddress: "",
+    // useraddress: "",
     userconfirmPass: "",
   });
   const [errortxt, setErrortxt] = useState("");
@@ -49,8 +49,8 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
       !userData.userconfirmPass ||
       !userData.userpassword ||
       !userData.usermobile ||
-      !userData.useremail ||
-      !userData.useraddress
+      !userData.useremail 
+      // !userData.useraddress
     ) {
       ToastAndroid.show(
         "Please fill in all fields",
@@ -94,7 +94,7 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
       useremail: "",
       usermobile: "",
       userpassword: "",
-      useraddress: "",
+      // useraddress: "",
       userconfirmPass: "",
     });
   };
@@ -138,13 +138,13 @@ const Register = ({ navigation, signup, isAuthenticated, error }) => {
             keyboardType="numeric"
             maxLength={10}
           />
-          <CustomTextInput
+          {/* <CustomTextInput
             placeholder={staticContents.enter_address}
             value={userData.useraddress}
             onChangeText={(txt) =>
               setuserData({ ...userData, useraddress: txt })
             }
-          />
+          /> */}
         </View>
         <View style={styles.eyebutton_style}>
           <View style={{ flexDirection: "row" }}>

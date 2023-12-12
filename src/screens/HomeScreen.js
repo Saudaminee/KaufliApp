@@ -12,7 +12,6 @@ import React from "react";
 import styles from "../utils/styles/styles";
 import { colors } from "../utils/styles/colors";
 import HomeHeader from "../components/commons/HomeHeader";
-import Search from "../components/commons/Search";
 import { IMAGES, getImageFromURL } from "../resources/images";
 import CategoryItem from "../components/commons/CategoryItem";
 import ProductItem from "../components/commons/ProductItem";
@@ -26,36 +25,31 @@ const imagesSlider = [
   },
   {
     id: 2,
-    img: require('../assets/slider2.png')
-  },
+    img: require('../assets/slider2.png')},
   {
     id: 3,
-    img: require('../assets/slider3.png')
-  },
-  {
-    id: 4,
-    img: require('../assets/slider1.png')
-  }
+    img: require('../assets/slider3.png') }
 ]
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   const categories = [
-    { id: 1, title: "Man" },
-    { id: 2, title: "Women" },
-    { id: 3, title: "Unisex" },
-    { id: 4, title: "New Arrivals" },
-    { id: 5, title: "Bags" },
-    { id: 6, title: "Shoes" },
-    { id: 7, title: "Beauty products" },
+    { id: 1,image: getImageFromURL(IMAGES.MEN), title: "Man" },
+    { id: 2,image: getImageFromURL(IMAGES.WOMEN), title: "Women" },
+    { id: 3, image: getImageFromURL(IMAGES.UNISEX),title: "Unisex" },
+    { id: 4,image: getImageFromURL(IMAGES.BLUESTONE), title: "New Arrivals" },
+    { id: 5,image: getImageFromURL(IMAGES.BAGSCAT), title: "Bags" },
+    { id: 6,image: getImageFromURL(IMAGES.SHOOCAT), title: "Shoes" },
+    { id: 7,image: getImageFromURL(IMAGES.BEAUTY), title: "Beauty\nproducts" },
   ];
 
   const brands = [
-    { id: 1, title: "Levice" },
-    { id: 2, title: "ZARA" },
-    { id: 3, title: "Roadster" },
-    { id: 4, title: "Woodland" },
-    { id: 5, title: "Zivame" },
+    { id: 1, image: getImageFromURL(IMAGES.BLUESTONE), title: "Blundstone" },
+    { id: 2, image: getImageFromURL(IMAGES.HUGO), title: "Hugo Boss" },
+    { id: 3,  image: getImageFromURL(IMAGES.BOTEGA),title: "Bottega Veneta" },
+    { id: 4,image: getImageFromURL(IMAGES.CK), title: "Calvin Klein" },
+    { id: 5, image: getImageFromURL(IMAGES.CARRR), title: "Carrera" },
+    { id: 6,  image: getImageFromURL(IMAGES.BOTEGA),title: "Guess" },
   ];
 
   const products = [
@@ -128,20 +122,17 @@ const HomeScreen = () => {
     return color;
   };
 
-  const handleSearch = (searchText) => {
-    // Handle the search action (e.g., filter data based on searchText)
-    console.log("Searching for:", searchText);
-  };
 
   return (
     <SafeAreaView style={styles.containerApp}>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <HomeHeader location={"Noida"} navigation={navigation} />
-      <Search onSearch={handleSearch} />
+      {/* <Search onSearch={handleSearch} /> */}
       {/* <DiscountCard /> */}
-      <View style={{ paddingBottom: 5, height: 200 }}>
+      <ScrollView>
+      <View style={{flexDirection:'column',marginTop:'1%'}}>
+      <View style={{ paddingBottom: 5,height:200 }}>
         <ImageSlider
-          //  data={{ uri: slide.image }}
           data={imagesSlider}
           autoPlay={true}
           localImg={true}
@@ -149,13 +140,14 @@ const HomeScreen = () => {
           closeIconColor="#fff"
           resizeMode={'cover'}
           indicatorContainerStyle={{
-            top: 5,
+            top: '20%',
           }}
+          inActiveIndicatorStyle={{height:2,width:20,backgroundColor:colors.GRAYS_WHITE}}
+          activeIndicatorStyle={{backgroundColor:colors.WHITE,height:2,width:10}}
           caroselImageStyle={{ resizeMode: 'cover', }}
         />
       </View>
-      <ScrollView>
-        <View style={styles.content}>
+      <View style={styles.content}>
           {/* Your app components */}
           <View>
             <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
@@ -164,12 +156,10 @@ const HomeScreen = () => {
                   fontSize: 17,
                   color: colors.DARK_BLACK,
                   fontWeight: "800",
-                }}>
-                Categories
-              </Text>
+                }}></Text>
               <TouchableOpacity
                 style={{ padding: 5, flexDirection: "row" }}
-                onPress={() => navigation.navigate("CategoriesScreen")}
+                onPress={() => navigation.navigate("CategoriesScreen",{data:categories})}
               >
                 <Text
                   style={{
@@ -190,28 +180,27 @@ const HomeScreen = () => {
             </View>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal>
               {categories.map((category) => (
-                <CategoryItem key={category.id} title={category.title} />
+                <CategoryItem key={category.id} image={category.image} title={category.title} />
               ))}
             </ScrollView>
           </View>
 
-          <View>
+          <View style={{marginTop:'3%'}}>
             <View
               style={{
                 justifyContent: "space-between",
                 flexDirection: "row",
                 marginVertical: "1%",
-              }}
-            >
+              }}>
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: 17,
                   color: colors.DARK_BLACK,
                   fontWeight: "500"
-                }} > Brands</Text>
+                }} > {"{Brands}"}</Text>
               <TouchableOpacity
                 style={{ padding: 5, flexDirection: "row" }}
-                onPress={() => navigation.navigate("BrandsScreen")}>
+                onPress={() => navigation.navigate("BrandsScreen",{data:brands})}>
                 <Text
                   style={{
                     fontSize: 12,
@@ -238,19 +227,15 @@ const HomeScreen = () => {
             </ScrollView>
           </View>
 
-          <View
-          // style={{ paddingBottom: "32%", marginTop: "2%", marginBottom: "34%" }} 
-          >
+      
             <View
-              style={{ justifyContent: "space-between", flexDirection: "row" }} >
+              style={{ justifyContent: "space-between", flexDirection: "row" ,marginTop:'3%'}} >
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: 17,
                   color: colors.DARK_BLACK,
                   fontWeight: "500",
-                }} >
-                Flash sale
-              </Text>
+                }} > {"{Flash sale}"}</Text>
               <TouchableOpacity
                 style={{ padding: 5, flexDirection: "row" }}
                 onPress={() => navigation.navigate("SaleScreen")} >
@@ -288,15 +273,12 @@ const HomeScreen = () => {
                 />
               )}
             />
-          </View>
 
           {/* bottom designs  */}
           <View style={{ backgroundColor: '#DACCC4', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Image source={require('../assets/jacket.png')}
               style={{ width: 120, height: 120 }}
             />
-
-
             <View style={{ alignItems: 'center', marginHorizontal: 10, justifyContent: 'center' }} >
               <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, }}>winter jacket and coats </Text>
               <Text style={{ fontSize: 10 }}> Elegant, sporty or casual, choose your style 🧥</Text>
@@ -308,8 +290,7 @@ const HomeScreen = () => {
                   alignItems: "center",
                   width: 60, height: 25,
                   alignContent: 'center', marginTop: 10
-                }}
-              >
+                }}>
 
                 <Text
                   style={{
@@ -318,22 +299,13 @@ const HomeScreen = () => {
                     fontWeight: "500",
                     fontSize: 10,
                     textAlign: 'center'
-                  }}
-                >
-                  {" "}
-                  View All
-                </Text>
-
-
+                  }}>
+                  View All</Text>
               </View>
             </View>
 
           </View>
-
-
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ Jacket }"}</Text>
-
-
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ Jacket }"}</Text>
           <View>
             <ImageBackground
               resizeMode={"cover"}
@@ -371,7 +343,7 @@ const HomeScreen = () => {
               </View>
             </ImageBackground>
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ t-shirt }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ t-shirt }"}</Text>
           <View style={{ backgroundColor: '#E3CAD2', width: '90%', height: 150, flexDirection: 'row', alignSelf: 'center' }}>
             <Image source={require('../assets/shoes.jpg')}
               style={{ width: 150, height: 150 }}
@@ -411,7 +383,7 @@ const HomeScreen = () => {
             </View>
 
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ feet look }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ feet look }"}</Text>
 
           <View style={{ backgroundColor: '#E2D3D4', width: '100%', height: 150, flexDirection: 'row', alignSelf: 'center' }}>
             <Image source={require('../assets/beautyProduct.jpeg')}
@@ -451,7 +423,7 @@ const HomeScreen = () => {
             </View>
 
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '100%', marginVertical: 10 }}> {"{ handmase cosmetics }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '100%', marginVertical: 10 }}> {"{ handmase cosmetics }"}</Text>
           <View style={{ backgroundColor: '#DACCC4', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
 
 
@@ -492,7 +464,7 @@ const HomeScreen = () => {
           </View>
 
 
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ handbags }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ handbags }"}</Text>
 
 
           {/* #244F32 */}
@@ -535,7 +507,7 @@ const HomeScreen = () => {
               style={{ width: 130, height: 130 }}
             />
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ LUXURY }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ LUXURY }"}</Text>
 
 
 
@@ -585,7 +557,7 @@ const HomeScreen = () => {
               </View>
             </ImageBackground>
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ ALL SESON }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ ALL SESON }"}</Text>
 
 
           <View>
@@ -635,8 +607,10 @@ const HomeScreen = () => {
               </View>
             </ImageBackground>
           </View>
-          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '100%', marginVertical: 10 }}> {"{  SPORT COLLETION }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '100%', marginVertical: 10 }}> {"{  SPORT COLLETION }"}</Text>
         </View>
+      </View>
+       
 
 
       </ScrollView>

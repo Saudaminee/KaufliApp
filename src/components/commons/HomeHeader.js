@@ -7,17 +7,23 @@ import React from 'react'
 const HomeHeader = ({location,navigation}) => {
     return (
         <View style={styles.header}>
-          <TouchableOpacity style={styles.profileStyle} onPress={() => navigation.navigate('ProfileScreen')}>
-            <Image source={getImageFromURL(IMAGES.PROFILE_ICON)}  style={styles.icon} />
-          </TouchableOpacity>
-          <View  >
+          {/* <TouchableOpacity style={styles.profileStyle} onPress={() => navigation.navigate('ProfileScreen')}> */}
+            <Image source={getImageFromURL(IMAGES.LOGO)}  style={{height:40,width:100,resizeMode:'cover'}} />
+          {/* </TouchableOpacity> */}
+          {/* <View  >
           <Text style={styles.titleStyle}>Delivery address</Text>
           <Text style={{fontSize:12,color:colors.BLACK_TWO,fontWeight:'800'}}>Noida sector 122,Greens 2</Text>
-          </View>
-       
+          </View> */}
+          <View style={{flexDirection:'row'}}>
+          <TouchableOpacity style={styles.notificationStyle} onPress={() => navigation.navigate('SearchScreen')}>
+            <Image source={getImageFromURL(IMAGES.SEARCH_ICON)} style={styles.icon} />
+          </TouchableOpacity>
+
           <TouchableOpacity style={styles.notificationStyle} onPress={() => navigation.navigate('Notifications')}>
             <Image source={getImageFromURL(IMAGES.NOTIFICATION_ICON)} style={styles.icon} />
           </TouchableOpacity>
+          </View>
+         
         </View>
       );
     };
@@ -27,6 +33,7 @@ const HomeHeader = ({location,navigation}) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           padding: 9,
+          
           backgroundColor: colors.WHITE, // Customize background color
         },
         notificationStyle:{

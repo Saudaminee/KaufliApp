@@ -68,7 +68,7 @@ const BottomTabsManager = () => {
           ),
         }}
       />
-       <Tab.Screen
+       {/* <Tab.Screen
         name="Track Orders"
         component={HomeScreen}
         options={{
@@ -93,7 +93,7 @@ const BottomTabsManager = () => {
             </View>
           ),
         }}
-      />
+      /> */}
         <Tab.Screen
         name="Favorites"
         component={FavoriteScreen}

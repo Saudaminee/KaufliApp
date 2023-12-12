@@ -264,7 +264,7 @@ const HomeScreen = () => {
             />
 
 
-            <View style={{ alignItems: 'center',marginHorizontal:10,justifyContent:'center' }} >
+            <View style={{ alignItems: 'center', marginHorizontal: 10, justifyContent: 'center' }} >
               <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, }}>winter jacket and coats </Text>
               <Text style={{ fontSize: 10 }}> Elegant, sporty or casual, choose your style 🧥</Text>
               <View
@@ -307,8 +307,8 @@ const HomeScreen = () => {
               source={require('../assets/tshirt.jpg')}
               style={{ height: 120, width: '100%' }}
             >
-              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, maxWidth: '95%',marginTop:'10%' ,marginHorizontal:10}}> T-shirts that can't miss in your wardrobe</Text>
-              <Text style={{ fontSize: 10,color:'#fff' ,marginHorizontal:15}}> So many designs for your unique style 👕</Text>
+              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, maxWidth: '95%', marginTop: '10%', marginHorizontal: 10 }}> T-shirts that can't miss in your wardrobe</Text>
+              <Text style={{ fontSize: 10, color: '#fff', marginHorizontal: 15 }}> So many designs for your unique style 👕</Text>
               <View
                 style={{
                   borderRadius: 2,
@@ -317,7 +317,7 @@ const HomeScreen = () => {
                   alignItems: "center",
                   width: 60, height: 25,
                   alignContent: 'center', marginTop: 5,
-                  marginHorizontal:15
+                  marginHorizontal: 15
                 }}
               >
 

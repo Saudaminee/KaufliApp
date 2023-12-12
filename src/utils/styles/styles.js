@@ -321,13 +321,12 @@ const styles = StyleSheet.create({
     height: 18,
   },
   categoryStyle: {
-    width: 60,
-    height: 60,
-    backgroundColor: colors.GRAYS_WHITE,
-    borderColor: colors.GRAYS_WHITE,
+    width: 65,
+    height: 65,
+    backgroundColor: colors.BLACK_TWO,
+    borderColor: colors.BLACK_TWO,
     borderWidth: 1,
     borderRadius: 50,
-    marginRight: 16,
     justifyContent:'center',
     alignItems:'center'
 },

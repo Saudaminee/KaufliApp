@@ -17,7 +17,7 @@ import SavedAddress from "../screens/SavedAddress";
 import BrandsScreen from "../screens/BrandsScreen";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import SaleScreen from "../screens/SaleScreen";
-
+import SearchScreen from "../screens/SearchScreen";
 import { connect } from "react-redux";
 import AddNewAddress from "../screens/AddNewAddress";
 const Stack = createStackNavigator();
@@ -108,6 +108,11 @@ const AppNavigator = ({ token }) => {
          <Stack.Screen
           name="SaleScreen"
           component={SaleScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          component={SearchScreen}
           options={{ headerShown: false }}
         />
         

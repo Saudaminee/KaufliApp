@@ -1,22 +1,20 @@
 // CategoryItem.js
 import React from "react";
-import { View, Image, Text } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../../utils/styles/colors";
 import styles from "../../utils/styles/styles";
 
-const CategoryItem = ({ title }) => {
+const CategoryItem = ({ id, title, image }) => {
   return (
-    <View style={styles.containerCategory}>
-      {/* <Image source={image} style={styles.categoryStyle} /> */}
-      <TouchableOpacity style={styles.categoryStyle}>
-        <Text
-          style={{ textAlign: "center", fontSize: 11, color: colors.BLACK }}
-        >
+    <TouchableOpacity style={{height:100,flexDirection:'column',marginRight:18,alignItems:'center',justifyContent:'center'}} >
+      <View style={styles.categoryStyle}>
+        <Image source={image} style={[styles.containerCategory, { height: 65, width: 65,resizeMode:'contain', borderRadius: 50, justifyContent: 'center' }]} />
+      </View>
+      <Text
+          style={{ fontSize: 11, color: colors.BLACK, alignSelf: 'center', fontWeight:'500' ,textAlign:'center'}} >
           {title}
         </Text>
-      </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 };
 

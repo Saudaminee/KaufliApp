@@ -19,26 +19,55 @@ import CategoryItem from "../components/commons/CategoryItem";
 import ProductItem from "../components/commons/ProductItem";
 import BrandsItem from "../components/commons/BrandsItem";
 import { useNavigation } from "@react-navigation/native";
+import ImageSliderView from "../components/commons/ImageSliderView";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   const categories = [
-    { id: 1, title: "Man" },
-    { id: 2, title: "Women" },
-    { id: 3, title: "Unisex" },
-    { id: 4, title: "New Arrivals" },
-    { id: 5, title: "Bags" },
-    { id: 6, title: "Shoes" },
-    { id: 7, title: "Beauty products" },
-  ];
+    {
+        id: 1,
+        image: getImageFromURL(IMAGES.MEN),
+        title: "Man",
+    },
+    {
+        id: 2,
+        image: getImageFromURL(IMAGES.WOMEN),
+        title: "Women",
+    },
+    {
+        id: 3,
+        image: getImageFromURL(IMAGES.UNISEX),
+        title: "Unisex",
+    },
+    {
+        id: 4,
+        image: getImageFromURL(IMAGES.BAGSCAT),
+        title: "Bags",
+    },
+    {
+        id: 5,
+        image: getImageFromURL(IMAGES.SHOOCAT),
+        title: "Shoes",
+    },
+    {
+        id: 6,
+        image: getImageFromURL(IMAGES.ACCESSORIES),
+        title: "Accessories",
+    },{
+        id: 7,
+        image: getImageFromURL(IMAGES.BEAUTY),
+        title: "Beauty\nProducts",
+    },
+    // Add more products as needed
+];
 
   const brands = [
-    { id: 1, title: "Levice" },
-    { id: 2, title: "ZARA" },
-    { id: 3, title: "Roadster" },
-    { id: 4, title: "Woodland" },
-    { id: 5, title: "Zivame" },
+    { id: 1, image: getImageFromURL(IMAGES.MEN), title: "Blundstone" },
+    { id: 2, image: getImageFromURL(IMAGES.WOMEN), title: "Hugo Boss" },
+    { id: 3,  image: getImageFromURL(IMAGES.BAGSCAT),title: "Bottega Veneta" },
+    { id: 4,image: getImageFromURL(IMAGES.SHOOCAT), title: "Calvin Klein" },
+    { id: 5, image: getImageFromURL(IMAGES.UNISEX), title: "Carrera" }
   ];
 
   const products = [
@@ -93,18 +122,16 @@ const HomeScreen = () => {
     return color;
   };
 
-  const handleSearch = (searchText) => {
-    // Handle the search action (e.g., filter data based on searchText)
-    console.log("Searching for:", searchText);
-  };
+  
 
   return (
     <SafeAreaView style={styles.containerApp}>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <HomeHeader location={"Noida"} navigation={navigation} />
-      <Search onSearch={handleSearch} />
+      {/* <Search onSearch={handleSearch} /> */}
       {/* <DiscountCard /> */}
-      <ScrollView>
+      {/* <ImageSliderView></ImageSliderView> */}
+      <ScrollView style={{marginTop:'3%'}}> 
       <View style={styles.content}>
         {/* Your app components */}
         <View>
@@ -115,11 +142,11 @@ const HomeScreen = () => {
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
               }}>
-              Categories
+              
             </Text>
             <TouchableOpacity
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("CategoriesScreen")}
+              onPress={() => navigation.navigate("CategoriesScreen",{data:categories})}
             >
               <Text
                 style={{
@@ -140,27 +167,25 @@ const HomeScreen = () => {
           </View>
           <ScrollView showsHorizontalScrollIndicator={false} horizontal>
             {categories.map((category) => (
-              <CategoryItem key={category.id} title={category.title} />
+              <CategoryItem key={category.id} title={category.title} image={category.image} />
             ))}
           </ScrollView>
         </View>
 
-        <View>
+        <View style={{marginTop:15}}>
           <View
             style={{
               justifyContent: "space-between",
               flexDirection: "row",
-              marginVertical: "1%",
-            }}
-          >
+              marginVertical: "1%" }}>
             <Text
               style={{
                 fontSize: 17,
                 color: colors.DARK_BLACK,
-                fontWeight: "800" }} > Brands</Text>
+                fontWeight: "800" }} >{"{"+"Brands"+"}"}</Text>
             <TouchableOpacity
               style={{ padding: 5, flexDirection: "row" }}
-              onPress={() => navigation.navigate("BrandsScreen")}>
+              onPress={() => navigation.navigate("BrandsScreen",{data: brands})}>
               <Text
                 style={{
                   fontSize: 12,
@@ -170,8 +195,7 @@ const HomeScreen = () => {
               <View style={styles.seeAll}>
                 <Image
                   source={getImageFromURL(IMAGES.NEXT_ICON)}
-                  style={styles.seeAllicon}
-                />
+                  style={styles.seeAllicon}/>
               </View>
             </TouchableOpacity>
           </View>
@@ -196,7 +220,7 @@ const HomeScreen = () => {
                 color: colors.DARK_BLACK,
                 fontWeight: "800",
               }} >
-              Flash sale
+            {"{"+"Flash Sale"+"}"}
             </Text>
             <TouchableOpacity 
               style={{ padding: 5, flexDirection: "row" }}

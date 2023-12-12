@@ -8,7 +8,7 @@ const BrandsItem = ({ title, backgroundColor }) => {
     return (
         <View style={[styles.brandContainer, { backgroundColor}]}>
           <TouchableOpacity style={styles.brandStyle}>
-          <Text style={{textAlign:'center',fontSize:12,color:colors.BLACK,fontWeight:'900'}}>{title}</Text>
+          <Text style={{textAlign:'center',fontSize:11,color:colors.BLACK,fontWeight:'900'}}>{title}</Text>
           </TouchableOpacity>
          
         </View>

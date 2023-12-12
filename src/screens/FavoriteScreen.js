@@ -70,7 +70,7 @@ const FavoriteScreen = ({ navigation }) => {
   const renderWishlistItem = ({ item }) => {
     console.log("item", JSON.stringify(item));
     return (
-      <View
+      <TouchableOpacity
         style={{
           alignItems: "center",
           backgroundColor: colors.GRAYS_WHITE,
@@ -81,6 +81,17 @@ const FavoriteScreen = ({ navigation }) => {
           padding: 10,
           borderRadius: 8,
           justifyContent:'center'
+        }}
+        onPress={()=>{
+          navigation.navigate("DetailedScreen",{
+            id: item.id,
+            name: item.name,
+            image: item.image,
+            price: item.price,
+            shortDetail: item.shortDetail,
+            offer: item.offer,
+            discount: item.discount,
+          })
         }}
       >
         <View>
@@ -144,7 +155,7 @@ const FavoriteScreen = ({ navigation }) => {
             </Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

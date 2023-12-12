@@ -63,11 +63,12 @@ const HomeScreen = () => {
 ];
 
   const brands = [
-    { id: 1, image: getImageFromURL(IMAGES.MEN), title: "Blundstone" },
-    { id: 2, image: getImageFromURL(IMAGES.WOMEN), title: "Hugo Boss" },
-    { id: 3,  image: getImageFromURL(IMAGES.BAGSCAT),title: "Bottega Veneta" },
-    { id: 4,image: getImageFromURL(IMAGES.SHOOCAT), title: "Calvin Klein" },
-    { id: 5, image: getImageFromURL(IMAGES.UNISEX), title: "Carrera" }
+    { id: 1, image: getImageFromURL(IMAGES.BLUESTONE), title: "Blundstone" },
+    { id: 2, image: getImageFromURL(IMAGES.HUGO), title: "Hugo Boss" },
+    { id: 3,  image: getImageFromURL(IMAGES.BOTEGA),title: "Bottega Veneta" },
+    { id: 4,image: getImageFromURL(IMAGES.CK), title: "Calvin Klein" },
+    { id: 5, image: getImageFromURL(IMAGES.CARRR), title: "Carrera" },
+    { id: 6,  image: getImageFromURL(IMAGES.BOTEGA),title: "Guess" },
   ];
 
   const products = [

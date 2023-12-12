@@ -27,7 +27,12 @@ export const IMAGES = {
   UNISEX: "UNISEX",
   BAGSCAT: "BAGSCAT",
   BEAUTY: "BEAUTY",
-  ACCESSORIES: "ACCESSORIES"
+  ACCESSORIES: "ACCESSORIES",
+  BLUESTONE: "BLUESTONE",
+  HUGO:"HUGO",
+  BOTEGA:"BOTEGA",
+  CK:"CK",
+  CARRR:"CARRR"
 
 };
 const getImage = (name) => {
@@ -150,6 +155,28 @@ const getImage = (name) => {
     case IMAGES.ACCESSORIES:
       iconName = require("../assets/jewellery.png")
       break;
+
+    case IMAGES.BLUESTONE:
+      iconName = require("../assets/bluestone.png")
+      break;
+
+      case IMAGES.HUGO:
+        iconName = require("../assets/hugo.png")
+        break;
+
+        case IMAGES.BOTEGA:
+          iconName = require("../assets/botega.png")
+          break;
+
+          case IMAGES.CK:
+          iconName = require("../assets/ck.png")
+          break;
+
+          case IMAGES.CARRR:
+            iconName = require("../assets/carrr.png")
+            break;
+          
+        
   }
   return iconName;
 };

@@ -40,5 +40,6 @@ export const colors = {
     WARM_GREY_TWO: "#999999",
     TANGERINE: "#ff8800",
     DARK_RED:'#8B0000',
-    GRAY:'#A0A0A0'
+    GRAY:'#A0A0A0',
+    MARQUEE_BG:"#f9f9f9"
   };

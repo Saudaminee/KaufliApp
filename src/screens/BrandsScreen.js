@@ -8,9 +8,11 @@ const BrandsScreen = ({route}) => {
   const { data } = route.params;
    
       const renderCategoryItem = ({ item }) => (
-        <TouchableOpacity style={{ flex: 1, margin: 8, alignItems: 'center',backgroundColor:colors.BASE_TEXT_COLOR ,borderRadius:10,padding:'3%'}}>
-          <Image source={item.image} style={{ width: '100%', height: 100, borderRadius: 8,resizeMode:'contain' }} />
-          <Text style={{color:colors.WHITE,marginTop:5,fontSize:14,fontWeight:'bold'}}>{item.title}</Text>
+        <TouchableOpacity style={{flex: 1, margin: 8, alignItems: 'center',flexDirection:'column'}}>
+        <View  style={{ backgroundColor:colors.BASE_TEXT_COLOR ,borderRadius:10,padding:'4%',width: '100%', height: 80}}>
+        <Image source={item.image} style={{ width: '100%', height: 60, borderRadius: 8,resizeMode:'contain'}} />
+        </View>
+          <Text style={{color:colors.BLACK,marginTop:5,fontSize:14,fontWeight:'600'}}>{item.title}</Text>
         </TouchableOpacity>
       );
     

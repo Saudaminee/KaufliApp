@@ -164,7 +164,7 @@ const HomeScreen = () => {
                   style={{
                     fontSize: 12,
                     color: colors.DARK_BLACK,
-                   marginRight: 5,
+                    marginRight: 5,
                     alignSelf: "center",
                   }}>
                   See all
@@ -462,15 +462,10 @@ const HomeScreen = () => {
             />
           </View>
 
-
           <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '50%', marginVertical: 10 }}> {"{ handbags }"}</Text>
-
 
           {/* #244F32 */}
           <View style={{ backgroundColor: '#244F32', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
-
-
-
             <View style={{ justifyContent: 'center', }} >
               <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, }}>Luxury corner</Text>
               <Text style={{ fontSize: 10, color: '#fff' }}>Shine with our exclusive brands ⭐</Text>

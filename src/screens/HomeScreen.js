@@ -18,7 +18,25 @@ import CategoryItem from "../components/commons/CategoryItem";
 import ProductItem from "../components/commons/ProductItem";
 import BrandsItem from "../components/commons/BrandsItem";
 import { useNavigation } from "@react-navigation/native";
-
+import { ImageSlider } from "react-native-image-slider-banner";
+const imagesSlider = [
+  {
+    id: 1,
+    img: 'https://static.vecteezy.com/system/resources/thumbnails/002/006/774/small/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-backgroud-for-banner-market-ecommerce-free-vector.jpg',
+  },
+  {
+    id: 2,
+    img: 'https://static.vecteezy.com/system/resources/thumbnails/004/299/835/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg'
+  },
+  {
+    id: 3,
+    img: 'https://t4.ftcdn.net/jpg/03/20/46/13/360_F_320461388_5Snqf6f2tRIqiWlaIzNWrCUm1Ocaqhfm.jpg'
+  },
+  {
+    id: 4,
+    img: 'https://morecustomersapp.com/wp-content/uploads/2020/08/banner-and-eCommerce.jpg'
+  }
+]
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -121,6 +139,21 @@ const HomeScreen = () => {
       <HomeHeader location={"Noida"} navigation={navigation} />
       <Search onSearch={handleSearch} />
       {/* <DiscountCard /> */}
+      <View style={{ paddingBottom: 5,height:200 }}>
+        <ImageSlider
+          //  data={{ uri: slide.image }}
+          data={imagesSlider}
+          autoPlay={true}
+          localImg={false}
+          showIndicator={true}
+          closeIconColor="#fff"
+          resizeMode={'cover'}
+          indicatorContainerStyle={{
+            top: 5,
+          }}
+          caroselImageStyle={{ resizeMode: 'cover', }}
+        />
+      </View>
       <ScrollView>
         <View style={styles.content}>
           {/* Your app components */}
@@ -142,7 +175,7 @@ const HomeScreen = () => {
                   style={{
                     fontSize: 12,
                     color: colors.DARK_BLACK,
-                    marginRight: 5,
+                   marginRight: 5,
                     alignSelf: "center",
                   }}>
                   See all
@@ -298,7 +331,7 @@ const HomeScreen = () => {
           </View>
 
 
-          <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ Jacket }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ Jacket }"}</Text>
 
 
           <View>
@@ -338,7 +371,271 @@ const HomeScreen = () => {
               </View>
             </ImageBackground>
           </View>
-          <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ t-shirt }"}</Text>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ t-shirt }"}</Text>
+          <View style={{ backgroundColor: '#E3CAD2', width: '90%', height: 150, flexDirection: 'row', alignSelf: 'center' }}>
+            <Image source={require('../assets/shoes.jpg')}
+              style={{ width: 150, height: 150 }}
+            />
+
+
+            <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }} >
+              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, }}>Style on your feet</Text>
+              <Text style={{ fontSize: 10, color: '#000', marginVertical: 5 }}>      Find the perfect sneakers for you 👟</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  borderColor: colors.BLACK,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60, height: 25,
+                  alignContent: 'center', marginTop: 10,
+                  borderWidth: 0.5
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: colors.BLACK,
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </View>
+
+          </View>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ feet look }"}</Text>
+
+          <View style={{ backgroundColor: '#E2D3D4', width: '100%', height: 150, flexDirection: 'row', alignSelf: 'center' }}>
+            <Image source={require('../assets/beautyProduct.jpeg')}
+              style={{ width: 150, height: 150 }}
+            />
+
+
+            <View style={{ justifyContent: 'center', marginHorizontal: 20 }} >
+              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, }}>Handmade cosmetics</Text>
+              <Text style={{ fontSize: 10, color: '#000', marginVertical: 5, maxWidth: '80%' }}>We have selected only the best products from top manufacturers</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  backgroundColor: colors.BLACK,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60, height: 25,
+                  alignContent: 'center', marginTop: 10
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: "#fff",
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </View>
+
+          </View>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '100%', marginVertical: 10 }}> {"{ handmase cosmetics }"}</Text>
+          <View style={{ backgroundColor: '#DACCC4', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
+
+
+
+            <View style={{ justifyContent: 'center', }} >
+              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, maxWidth: '70%' }}>Designer Handbags for Every Occasion</Text>
+              <Text style={{ fontSize: 10 }}>Designer Handbags for Every Occasion</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  backgroundColor: colors.BLACK,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60, height: 25,
+                  alignContent: 'center', marginTop: 10
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: "#fff",
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </View>
+            <Image source={require('../assets/handbegs.png')}
+              style={{ width: 120, height: 120 }}
+            />
+          </View>
+
+
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ handbags }"}</Text>
+
+
+          {/* #244F32 */}
+          <View style={{ backgroundColor: '#244F32', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
+
+
+
+            <View style={{ justifyContent: 'center', }} >
+              <Text style={{ textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, }}>Luxury corner</Text>
+              <Text style={{ fontSize: 10, color: '#fff' }}>Shine with our exclusive brands ⭐</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60, height: 25,
+                  alignContent: 'center', marginTop: 10,
+                  borderColor: '#fff',
+                  borderWidth: 0.5
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: "#fff",
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </View>
+            <Image source={require('../assets/earing.jpeg')}
+              style={{ width: 130, height: 130 }}
+            />
+          </View>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ LUXURY }"}</Text>
+
+
+
+          <View>
+            <ImageBackground
+              resizeMode={"cover"}
+              source={require('../assets/allsales.png')}
+              style={{ height: 120, width: '100%' }}
+            >
+              <Text style={{
+                textTransform: 'capitalize',
+                fontWeight: 'bold', color: '#fff',
+                fontSize: 18,
+                maxWidth: '95%',
+                marginTop: '8%',
+                marginHorizontal: 10,
+                textAlign: 'center'
+              }}>All out end of season</Text>
+              <Text style={{ fontSize: 10, color: '#fff', textAlign: 'center', marginVertical: 5 }}>Lots of products at incredible prices 😎</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  backgroundColor: '#fff',
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60, height: 25,
+                  alignContent: 'center',
+                  marginHorizontal: 15,
+                  alignItems: 'center', alignSelf: 'center'
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: "#000",
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </ImageBackground>
+          </View>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '50%', marginVertical: 10 }}> {"{ ALL SESON }"}</Text>
+
+
+          <View>
+            <ImageBackground
+              resizeMode={"cover"}
+              source={require('../assets/sports.jpg')}
+              style={{ height: 120, width: '100%' }}
+            >
+              <Text style={{
+                textTransform: 'capitalize',
+                fontWeight: 'bold',
+                color: '#fff',
+                fontSize: 18, maxWidth: '95%',
+                marginTop: '8%',
+                marginHorizontal: 10
+              }}>
+                Sport collection</Text>
+              <Text style={{ fontSize: 10, color: '#fff', marginHorizontal: 10, marginVertical: 5 }}>Limited edition sports collection made from recycled plastic bottles</Text>
+              <View
+                style={{
+                  borderRadius: 2,
+                  backgroundColor: '#fff',
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 60,
+                  height: 25,
+                  alignContent: 'center',
+                  marginHorizontal: 10
+
+                }}
+              >
+
+                <Text
+                  style={{
+                    textTransform: "uppercase",
+                    color: "#000",
+                    fontWeight: "500",
+                    fontSize: 10,
+                    textAlign: 'center'
+                  }}
+                >
+                  {" "}
+                  View All
+                </Text>
+
+
+              </View>
+            </ImageBackground>
+          </View>
+          <Text style={{ textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 20, maxWidth: '100%', marginVertical: 10 }}> {"{  SPORT COLLETION }"}</Text>
         </View>
 
 

@@ -22,19 +22,19 @@ import { ImageSlider } from "react-native-image-slider-banner";
 const imagesSlider = [
   {
     id: 1,
-    img: 'https://static.vecteezy.com/system/resources/thumbnails/002/006/774/small/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-backgroud-for-banner-market-ecommerce-free-vector.jpg',
+    img: require('../assets/slider1.png'),
   },
   {
     id: 2,
-    img: 'https://static.vecteezy.com/system/resources/thumbnails/004/299/835/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg'
+    img: require('../assets/slider2.png')
   },
   {
     id: 3,
-    img: 'https://t4.ftcdn.net/jpg/03/20/46/13/360_F_320461388_5Snqf6f2tRIqiWlaIzNWrCUm1Ocaqhfm.jpg'
+    img: require('../assets/slider3.png')
   },
   {
     id: 4,
-    img: 'https://morecustomersapp.com/wp-content/uploads/2020/08/banner-and-eCommerce.jpg'
+    img: require('../assets/slider1.png')
   }
 ]
 const HomeScreen = () => {
@@ -139,12 +139,12 @@ const HomeScreen = () => {
       <HomeHeader location={"Noida"} navigation={navigation} />
       <Search onSearch={handleSearch} />
       {/* <DiscountCard /> */}
-      <View style={{ paddingBottom: 5,height:200 }}>
+      <View style={{ paddingBottom: 5, height: 200 }}>
         <ImageSlider
           //  data={{ uri: slide.image }}
           data={imagesSlider}
           autoPlay={true}
-          localImg={false}
+          localImg={true}
           showIndicator={true}
           closeIconColor="#fff"
           resizeMode={'cover'}
@@ -175,7 +175,7 @@ const HomeScreen = () => {
                   style={{
                     fontSize: 12,
                     color: colors.DARK_BLACK,
-                   marginRight: 5,
+                    marginRight: 5,
                     alignSelf: "center",
                   }}>
                   See all

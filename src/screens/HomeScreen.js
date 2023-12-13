@@ -23,6 +23,20 @@ import { imagesForSlider } from "../utils/constant";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+   const imagesSlider = [
+    {
+      id: 1,
+      img: require('../assets/slider1.png'),
+    },
+    {
+      id: 2,
+      img: require('../assets/slider2.png')
+    },
+    {
+      id: 3,
+      img: require('../assets/slider3.png')
+    }
+  ]
   const categories = [
     { id: 1, image: getImageFromURL(IMAGES.MEN), title: "Man" },
     { id: 2, image: getImageFromURL(IMAGES.WOMEN), title: "Women" },
@@ -123,7 +137,7 @@ const HomeScreen = () => {
           {/* Images slider view  */}
           <View style={styles.slideImageView}>
             <ImageSlider
-              data={imagesForSlider}
+              data={imagesSlider}
               autoPlay={true}
               localImg={true}
               showIndicator={true}

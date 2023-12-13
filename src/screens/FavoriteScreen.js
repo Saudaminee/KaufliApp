@@ -72,7 +72,17 @@ const FavoriteScreen = ({ navigation }) => {
     return (
       <TouchableOpacity
         style={styles.renderTouchView}
-        onPress={() => goToDetailedScreen()}
+        onPress={() => {
+          navigation.navigate("DetailedScreen", {
+            id: item.id,
+            name: item.name,
+            image: item.image,
+            price: item.price,
+            shortDetail: item.shortDetail,
+            offer: item.offer,
+            discount: item.discount,
+          });
+        }}
       >
         <ImageBackground source={item.image} style={styles.image}>
           <TouchableOpacity

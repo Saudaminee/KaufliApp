@@ -327,123 +327,125 @@ const styles = StyleSheet.create({
     borderColor: colors.BLACK_TWO,
     borderWidth: 1,
     borderRadius: 50,
-    justifyContent:'center',
-    alignItems:'center'
-},
-brandStyle: {
-  width: 59,
-  height: 59,
-  backgroundColor: colors.GRAYS_WHITE,
-  borderColor: colors.GRAYS_WHITE,
-  borderWidth: 1,
-  borderRadius: 50,
-  // marginRight: 10,
-  justifyContent:'center',
-  alignItems:'center'
-},
-brandContainer: {
-  width:60,
-  height:60,
-  borderRadius:50,
-  borderRadius: 8,
-  marginRight: 16,
-  marginLeft:10,
-  marginVertical:15,
-  justifyContent:'center',
-  alignItems:'center'
-},
-listContainer: {
-  flexDirection: 'column',
-},
-itemContainer: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: 16,
-},
-itemImage: {
-  width: 80,
-  height: 80,
-  borderRadius: 8,
-  marginRight: 16,
-},
-itemName: {
-  fontSize: 18,
-  flex: 1,
-},
-removeButton: {
-  color: 'red',
-},
-image: {
-  width: "100%",
-  height: 150,
-  resizeMode: "cover", // or 'contain' based on your preference
-  borderRadius: 8,
-  marginBottom: 8,
-  overflow: "hidden",
-  position: "relative", // or 'absolute' based on your layout
-},
-wish_container: {
-  flex: 1,
-  margin: 10,
-  backgroundColor: colors.GRAYS_WHITE,
-  borderRadius: 8,
-  padding: 8,
-  
-},
-remove: {
-  width: 28,
-  height: 28,
-  backgroundColor: colors.GRAYS_WHITE,
-  right: "5%",
-  marginTop: 5,
-  position: "absolute",
-  borderRadius: 40,
-  justifyContent: "center",
-  alignItems: "center",
-},
-profileText:{
-  fontSize:11,
-  color:colors.BASE_TEXT_COLOR,
-  fontWeight:'400',
-},
-commonTouchProfile:{
-  flexDirection:'row',
-  justifyContent:'space-between',
-  padding:10,
-  alignItems:'center',
-  marginHorizontal:10,
-},
-lineView:{width:'100%',
-height:0.5,
-backgroundColor:colors.GRAYS_WHITE},
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  brandStyle: {
+    width: 59,
+    height: 59,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderColor: colors.GRAYS_WHITE,
+    borderWidth: 1,
+    borderRadius: 50,
+    // marginRight: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  brandContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    borderRadius: 8,
+    marginRight: 16,
+    marginLeft: 10,
+    marginVertical: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  listContainer: {
+    flexDirection: 'column',
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  itemImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+    marginRight: 16,
+  },
+  itemName: {
+    fontSize: 18,
+    flex: 1,
+  },
+  removeButton: {
+    color: 'red',
+  },
+  image: {
+    width: "100%",
+    height: 150,
+    resizeMode: "cover", // or 'contain' based on your preference
+    borderRadius: 8,
+    marginBottom: 8,
+    overflow: "hidden",
+    position: "relative", // or 'absolute' based on your layout
+  },
+  wish_container: {
+    flex: 1,
+    margin: 10,
+    backgroundColor: colors.GRAYS_WHITE,
+    borderRadius: 8,
+    padding: 8,
 
-iconStyle:{
-  height:18,width:18,resizeMode:'contain'
-},
-filerStyle: {
+  },
+  remove: {
+    width: 28,
+    height: 28,
+    backgroundColor: colors.GRAYS_WHITE,
+    right: "5%",
+    marginTop: 5,
+    position: "absolute",
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  profileText: {
+    fontSize: 11,
+    color: colors.BASE_TEXT_COLOR,
+    fontWeight: '400',
+  },
+  commonTouchProfile: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    alignItems: 'center',
+    marginHorizontal: 10,
+  },
+  lineView: {
+    width: '100%',
+    height: 0.5,
+    backgroundColor: colors.GRAYS_WHITE
+  },
+
+  iconStyle: {
+    height: 18, width: 18, resizeMode: 'contain'
+  },
+  filerStyle: {
     flexDirection: 'row',
     padding: 4,
     backgroundColor: colors.WHITE,
     borderRadius: 5
-},
-filterText: {
+  },
+  filterText: {
     fontSize: 12,
     color: colors.BLACK,
     fontWeight: '700'
-},
-textStyle: {
+  },
+  textStyle: {
     fontSize: 11,
     paddingHorizontal: 5,
     color: colors.BLACK
-},
-filterIconStyle: {
+  },
+  filterIconStyle: {
     height: 12,
     width: 16,
     alignSelf: 'center',
     paddingHorizontal: 2,
     resizeMode: 'contain'
-},
- 
+  },
+
   //   justifyContent: "center",
   //   alignItems: "center",
   // },
@@ -498,6 +500,191 @@ filterIconStyle: {
     justifyContent: "center",
     alignItems: "center",
   },
+  // home screen's styles
+  slideImageView: { paddingBottom: 5, height: 200 },
+  catView: { flexDirection: "row", justifyContent: 'flex-end' },
+  seeAllText: {
+    fontSize: 12,
+    color: colors.DARK_BLACK,
+    marginRight: 5,
+    alignSelf: "center",
+  },
+  scrollStyle: { flexDirection: 'column', marginTop: '1%' },
+  brandViewStyle: { marginTop: '3%' },
+  branssubViewStyle: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    marginVertical: "1%",
+  },
+  brandTextStyle: {
+    fontSize: 17,
+    color: colors.DARK_BLACK,
+    fontWeight: "500"
+  },
+
+  seeAllTouch: { padding: 5, flexDirection: "row" },
+  flashSaleView: { justifyContent: "space-between", flexDirection: "row", marginTop: '3%' },
+  jacketMainView: { backgroundColor: '#DACCC4', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
+  jacketImageStyle: { width: 120, height: 120 },
+  jacketTextView: { alignItems: 'center', marginHorizontal: 10, justifyContent: 'center' },
+  jacketMainText: { textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, },
+  jacketSubText: { fontSize: 10, color: '#000', marginVertical: 5 },
+  viewAllView: {
+    borderRadius: 2,
+    backgroundColor: colors.BLACK,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60, height: 25,
+    alignContent: 'center', marginTop: 10
+  },
+  viewAllText: {
+    textTransform: "uppercase",
+    color: "#fff",
+    fontWeight: "500",
+    fontSize: 10,
+    textAlign: 'center'
+  },
+  jacketTextStyle: { textTransform: "uppercase", fontWeight: 'bold', color: '#000', fontSize: 17, maxWidth: '100%', marginVertical: 10 },
+  tshirtImageStyle: { height: 120, width: '100%' },
+  tshirtMainText: { textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, maxWidth: '95%', marginTop: '10%', marginHorizontal: 10 },
+  tshirtSubText: { fontSize: 10, color: '#fff', marginHorizontal: 15 },
+  tshirtViewAllStyle: {
+    borderRadius: 2,
+    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60, height: 25,
+    alignContent: 'center', marginTop: 5,
+    marginHorizontal: 15
+  },
+  tshirtViewAllText: {
+    textTransform: "uppercase",
+    color: "#000",
+    fontWeight: "500",
+    fontSize: 10,
+    textAlign: 'center'
+  },
+  feetMainView: { justifyContent: 'center', alignItems: 'center', flex: 1 },
+  feetViewAllButton: {
+    borderRadius: 2,
+    borderColor: colors.BLACK,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60, height: 25,
+    alignContent: 'center', marginTop: 10,
+    borderWidth: 0.5
+  },
+  feetImagestyle: { width: 150, height: 150 },
+  beautyMainView: { backgroundColor: '#E2D3D4', width: '100%', height: 150, flexDirection: 'row', alignSelf: 'center' },
+  beautyImageStyle: { width: 150, height: 150 },
+  beautySubView: { justifyContent: 'center', marginHorizontal: 20 },
+
+  beautyMainText: { textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, },
+  beautySubText: { fontSize: 10, color: '#000', marginVertical: 5, maxWidth: '80%' },
+  BagMainView: { backgroundColor: '#DACCC4', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', },
+  BagImageStyle: { width: 120, height: 120 },
+  bagSubView: { justifyContent: 'center', },
+  bagMainText: { textTransform: 'capitalize', fontWeight: 'bold', color: '#000', fontSize: 18, maxWidth: '70%' },
+  earingMainView: { backgroundColor: '#244F32', width: '100%', height: 150, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', },
+  earingTextView: { textTransform: 'capitalize', fontWeight: 'bold', color: '#fff', fontSize: 18, },
+  earingSubTextView: { fontSize: 10, color: '#fff' },
+  earingSellView: {
+    borderRadius: 2,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60, height: 25,
+    alignContent: 'center', marginTop: 10,
+    borderColor: '#fff',
+    borderWidth: 0.5
+  },
+  earingImageView: { width: 130, height: 130 },
+  salesImageStyle: { height: 120, width: '100%' },
+  salesMainText: {
+    textTransform: 'capitalize',
+    fontWeight: 'bold', color: '#fff',
+    fontSize: 18,
+    maxWidth: '95%',
+    marginTop: '8%',
+    marginHorizontal: 10,
+    textAlign: 'center'
+  },
+  salesSubText: { fontSize: 10, color: '#fff', textAlign: 'center', marginVertical: 5 },
+  salesViewAllView: {
+    borderRadius: 2,
+    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60, height: 25,
+    alignContent: 'center',
+    marginHorizontal: 15,
+    alignItems: 'center', alignSelf: 'center'
+  },
+  salesViewAll: {
+    textTransform: "uppercase",
+    color: "#000",
+    fontWeight: "500",
+    fontSize: 10,
+    textAlign: 'center'
+  },
+  salesMainText: {
+    textTransform: 'capitalize',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: 18, maxWidth: '95%',
+    marginTop: '8%',
+    marginHorizontal: 10
+  },
+  salesSubText: { fontSize: 10, color: '#fff', marginHorizontal: 10, marginVertical: 5 },
+  salesViewAllView: {
+    borderRadius: 2,
+    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    width: 60,
+    height: 25,
+    alignContent: 'center',
+    marginHorizontal: 10
+
+  },
+  salesViewAllText: {
+    textTransform: "uppercase",
+    color: "#000",
+    fontWeight: "500",
+    fontSize: 10,
+    textAlign: 'center'
+  },
+// favorite screen '
+renderTouchView:{
+  backgroundColor: colors.GRAYS_WHITE,
+  marginVertical: 10,
+  padding: 10,
+  borderRadius: 8,
+  flex: 1,
+  margin: 10,
+},
+likeicon:{ height: 15, width: 15, tintColor: "#FF7F7F" },
+priceView:{
+  flexDirection: "row",
+  justifyContent: "space-between",
+  marginVertical: 4,
+},
+offerText:{ color: "#FF7F7F" },
+ratingView:{
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "flex-end",
+},
+ratingText:{ color: "#000" },
+ratingIcon:{
+  height: 14,
+  width: 14,
+  resizeMode: "contain",
+  left: 4,
+  tintColor: "#03A685",
+},reviewText:{
+  marginStart: 5,
+  color: "grey",
+},
 });
 
 export default styles;

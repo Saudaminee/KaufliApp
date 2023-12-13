@@ -118,7 +118,7 @@ const FavoriteScreen = ({ navigation }) => {
             <Text>
               {"\u20B9"} {item.price}
             </Text>
-            <Text style={{ color: "red" }}> {item.offer}</Text>
+            <Text style={styles.offerText}> {item.offer}</Text>
           </View>
 
           <View

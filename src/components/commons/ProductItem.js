@@ -54,7 +54,7 @@ const ProductItem = ({
                 ? getImageFromURL(IMAGES.LIKE)
                 : getImageFromURL(IMAGES.UNLIKE)
             }
-            style={styles.icon}
+            style={isLiked ? styles.selected : styles.icon}
           />
         </TouchableOpacity>
       </ImageBackground>
@@ -114,6 +114,12 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     justifyContent: "center",
     alignItems: "center",
+  },
+  selected:{
+    height: 10,
+    width: 10,
+    tintColor:colors.DARK_RED,
+    resizeMode: "contain"
   },
   icon: {
     height: 10,

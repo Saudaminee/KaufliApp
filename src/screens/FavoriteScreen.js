@@ -92,21 +92,18 @@ const FavoriteScreen = ({ navigation }) => {
             offer: item.offer,
             discount: item.discount,
           })
-        }}
-      >
+        }} >
         <View>
           <ImageBackground
             resizeMode={"cover"}
             source={item.image}
-            style={styles.image}
-          >
+            style={styles.image}>
             <TouchableOpacity
               style={styles.remove}
-              onPress={() => removeFromWishlist(item.id)}
-            >
+              onPress={() => removeFromWishlist(item.id)}>
               <Image
                 source={getImageFromURL(IMAGES.LIKE)}
-                style={{ height: 15, width: 15, tintColor: "red" }}
+                style={{ height: 15, width: 15, tintColor: colors.DARK_RED }}
               />
             </TouchableOpacity>
           </ImageBackground>
@@ -117,9 +114,7 @@ const FavoriteScreen = ({ navigation }) => {
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              marginVertical: 4,
-            }}
-          >
+              marginVertical: 4}}>
             <Text>
               {"\u20B9"} {item.price}
             </Text>
@@ -131,8 +126,7 @@ const FavoriteScreen = ({ navigation }) => {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "flex-end",
-            }}
-          >
+            }}>
             <Text style={{ color: "#000" }}>4.2</Text>
             <Image
               source={getImageFromURL(IMAGES.RATESTAR)}
@@ -141,18 +135,12 @@ const FavoriteScreen = ({ navigation }) => {
                 width: 14,
                 resizeMode: "contain",
                 left: 4,
-                tintColor: "#03A685",
-              }}
-            />
+                tintColor: "#03A685" }}/>
             <Text
               style={{
                 marginStart: 5,
                 color: "grey",
-              }}
-            >
-              {" "}
-              (112)
-            </Text>
+              }}> (112)</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -169,8 +157,7 @@ const FavoriteScreen = ({ navigation }) => {
           borderTopRightRadius: 15,
           padding: "2%",
           height: "100%",
-        }}
-      >
+        }} >
         <FlatList
           data={wishlistItems}
           numColumns={2}

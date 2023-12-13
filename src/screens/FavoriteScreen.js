@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import Header from "../components/commons/Header";
 import styles from "../utils/styles/styles";
-import { IMAGES, getImageFromURL } from "../resources/images";
+import { IMAGES, getImageFromURL } from '../resources/images';
 import { colors } from "../utils/styles/colors";
 import WishlistItem from "../components/commons/WishlistItem";
 import { COLOURS } from "../components/database/Database";

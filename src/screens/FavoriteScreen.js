@@ -71,7 +71,17 @@ const FavoriteScreen = ({ navigation }) => {
     console.log("item", JSON.stringify(item));
     return (
       <TouchableOpacity
-        style={styles.renderTouchView}
+        style={{
+          alignItems: "center",
+          backgroundColor: colors.GRAYS_WHITE,
+          alignContent: "center",
+          alignSelf: "center",
+          marginHorizontal: 14,
+          marginVertical: 10,
+          padding: 10,
+          borderRadius: 8,
+          justifyContent: "center",
+        }}
         onPress={() => {
           navigation.navigate("DetailedScreen", {
             id: item.id,
@@ -84,33 +94,65 @@ const FavoriteScreen = ({ navigation }) => {
           });
         }}
       >
-        <ImageBackground source={item.image} style={styles.image}>
-          <TouchableOpacity
-            style={styles.remove}
-            onPress={() => removeFromWishlist(item.id)}
+        <View>
+          <ImageBackground
+            resizeMode={"cover"}
+            source={item.image}
+            style={styles.image}
           >
-            <Image
-              source={getImageFromURL(IMAGES.LIKE)}
-              style={styles.likeicon}
-            />
-          </TouchableOpacity>
-        </ImageBackground>
+            <TouchableOpacity
+              style={styles.remove}
+              onPress={() => removeFromWishlist(item.id)}
+            >
+              <Image
+                source={getImageFromURL(IMAGES.LIKE)}
+                style={{ height: 15, width: 15, tintColor: '#FF7F7F' }}
+              />
+            </TouchableOpacity>
+          </ImageBackground>
+        </View>
         <View>
           <Text>{item.name}</Text>
-          <View style={styles.priceView}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginVertical: 4,
+            }}
+          >
             <Text>
               {"\u20B9"} {item.price}
             </Text>
             <Text style={styles.offerText}> {item.offer}</Text>
           </View>
 
-          <View style={styles.ratingView}>
-            <Text style={styles.ratingText}>4.2</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text style={{ color: "#000" }}>4.2</Text>
             <Image
               source={getImageFromURL(IMAGES.RATESTAR)}
-              style={styles.ratingIcon}
+              style={{
+                height: 14,
+                width: 14,
+                resizeMode: "contain",
+                left: 4,
+                tintColor: "#03A685",
+              }}
             />
-            <Text style={styles.reviewText}> (112)</Text>
+            <Text
+              style={{
+                marginStart: 5,
+                color: "grey",
+              }}
+            >
+              {" "}
+              (112)
+            </Text>
           </View>
         </View>
       </TouchableOpacity>

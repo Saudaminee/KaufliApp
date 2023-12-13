@@ -19,7 +19,7 @@ import ProductItem from "../components/commons/ProductItem";
 import BrandsItem from "../components/commons/BrandsItem";
 import { useNavigation } from "@react-navigation/native";
 import { ImageSlider } from "react-native-image-slider-banner";
-import { imagesForSlider } from "../utils/constant";
+// import { imagesForSlider } from "../utils/constant";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -115,6 +115,20 @@ const HomeScreen = () => {
     },
     // Add more products as needed
   ];
+  const imagesForSlider = [
+    {
+      id: 1,
+      img: require('../assets/slider1.png'),
+    },
+    {
+      id: 2,
+      img: require('../assets/slider2.png')
+    },
+    {
+      id: 3,
+      img: require('../assets/slider3.png')
+    }
+  ]
   // get random color function useed in brand bg
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";

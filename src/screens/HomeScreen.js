@@ -129,6 +129,7 @@ const HomeScreen = () => {
       img: require('../assets/slider3.png')
     }
   ]
+
   // get random color function useed in brand bg
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
@@ -141,9 +142,9 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.containerApp}>
-      {/* Status bar  */}
+      {/* Status bar */}
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      {/* header view  */}
+      {/* header view */}
       <HomeHeader location={"Noida"} navigation={navigation} />
       {/* Whole content */}
       <ScrollView>
@@ -190,9 +191,7 @@ const HomeScreen = () => {
                   onPress={() =>
                     navigation.navigate("CategoriesScreen", {
                       data: categories,
-                    })
-                  }
-                >
+                    }) }>
                   <Text style={styles.seeAllText}>See all</Text>
                   <View style={styles.seeAll}>
                     <Image
@@ -221,8 +220,7 @@ const HomeScreen = () => {
                   style={styles.seeAllTouch}
                   onPress={() =>
                     navigation.navigate("BrandsScreen", { data: brands })
-                  }
-                >
+                  }>
                   <Text style={styles.seeAllText}> See all </Text>
                   <View style={styles.seeAll}>
                     <Image
@@ -248,8 +246,7 @@ const HomeScreen = () => {
               <Text style={styles.brandTextStyle}> {"{Flash sale}"}</Text>
               <TouchableOpacity
                 style={{ padding: 5, flexDirection: "row" }}
-                onPress={() => navigation.navigate("SaleScreen")}
-              >
+                onPress={() => navigation.navigate("SaleScreen")}>
                 <Text style={styles.seeAllText}>See all</Text>
                 <View style={styles.seeAll}>
                   <Image
@@ -259,6 +256,7 @@ const HomeScreen = () => {
                 </View>
               </TouchableOpacity>
             </View>
+
             {/* product list here! */}
             <FlatList
               data={products}
@@ -274,8 +272,7 @@ const HomeScreen = () => {
                   id={item.id}
                   discount={item.discount}
                 />
-              )}
-            />
+              )} />
 
             {/* bottom designs  */}
             <View style={styles.jacketMainView}>
@@ -302,8 +299,7 @@ const HomeScreen = () => {
               <ImageBackground
                 resizeMode={"cover"}
                 source={require("../assets/tshirt.jpg")}
-                style={styles.tshirtImageStyle}
-              >
+                style={styles.tshirtImageStyle}>
                 <Text style={styles.tshirtMainText}>
                   {" "}
                   T-shirts that can't miss in your wardrobe
@@ -325,9 +321,7 @@ const HomeScreen = () => {
                 width: "90%",
                 height: 150,
                 flexDirection: "row",
-                alignSelf: "center",
-              }}
-            >
+                alignSelf: "center"}} >
               <Image
                 source={require("../assets/shoes.jpg")}
                 style={styles.feetImagestyle}
@@ -348,8 +342,8 @@ const HomeScreen = () => {
             <View style={styles.beautyMainView}>
               <Image
                 source={require("../assets/beautyProduct.jpeg")}
-                style={styles.beautyImageStyle}
-              />
+                style={styles.beautyImageStyle} />
+
               <View style={styles.beautySubView}>
                 <Text style={styles.beautyMainText}>Handmade cosmetics</Text>
                 <Text style={styles.beautySubText}>

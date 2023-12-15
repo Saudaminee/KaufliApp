@@ -184,31 +184,29 @@ const HomeScreen = () => {
                   style={{
                     fontSize: 17,
                     color: colors.DARK_BLACK,
-                    fontWeight: "800",
+                    fontWeight: "800"
                   }}></Text> */}
                 <TouchableOpacity
                   style={{ padding: 5, flexDirection: "row" }}
-                  onPress={() =>
-                    navigation.navigate("CategoriesScreen", {
-                      data: categories,
-                    }) }>
+                  onPress={() => navigation.navigate("CategoriesScreen", {
+                      data: categories }) }>
                   <Text style={styles.seeAllText}>See all</Text>
                   <View style={styles.seeAll}>
                     <Image
                       source={getImageFromURL(IMAGES.NEXT_ICON)}
-                      style={styles.seeAllicon}
-                    />
+                      style={styles.seeAllicon}/>
                   </View>
                 </TouchableOpacity>
               </View>
 
-              <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+              <ScrollView
+               showsHorizontalScrollIndicator={false}
+                horizontal>
                 {categories.map((category) => (
                   <CategoryItem
                     key={category.id}
                     image={category.image}
-                    title={category.title}
-                  />
+                    title={category.title}/>
                 ))}
               </ScrollView>
             </View>
